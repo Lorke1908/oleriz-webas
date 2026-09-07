@@ -1,0 +1,80 @@
+# Config for Pages CMS (app.pagescms.org) — the visual editor for this site.
+# Editing here changes what the editing screens look like, not the site itself.
+
+content:
+  - name: jobs
+    label: Job postings
+    type: file
+    path: jobs.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Job title
+        type: string
+        required: true
+        description: The role as a candidate would recognise it, e.g. "Senior Accountant".
+
+      - name: team
+        label: Company
+        type: string
+        required: true
+        description: Shown in small grey text under the title. Client names stay anonymous unless they've agreed — e.g. "Manufacturing group · 400 employees".
+
+      - name: category
+        label: Category
+        type: select
+        required: true
+        default: Operations
+        description: Decides which filter button the role appears under on the site.
+        options:
+          values:
+            - Finance
+            - Operations
+            - Sales
+            - HR
+            - IT
+            - Marketing
+            - Engineering
+            - Logistics
+            - Customer Service
+            - Legal
+            - Management
+
+      - name: location
+        label: Work location
+        type: select
+        required: true
+        default: On-site
+        options:
+          values: [On-site, Hybrid, Remote]
+
+      - name: type
+        label: Contract type
+        type: select
+        required: true
+        default: Full-time
+        options:
+          values: [Full-time, Part-time, Contract, Temporary, Internship]
+
+      - name: salary
+        label: Salary
+        type: string
+        required: true
+        description: Shown exactly as you type it, e.g. "€3,200–3,800 gross/mo" or "€2,800–3,400 + bonus".
+
+      - name: experience
+        label: Experience needed
+        type: string
+        description: Optional. e.g. "5+ years".
+
+      - name: level
+        label: Seniority
+        type: string
+        description: Optional. e.g. "Senior", "Mid-level", "Junior–Mid".
+
+      - name: link
+        label: Apply link
+        type: string
+        default: "#contact"
+        description: Leave as #contact to send applicants to the contact form. Or paste a full URL / mailto: address.
