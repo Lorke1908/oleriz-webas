@@ -168,11 +168,7 @@
         "question": "What should my CV look like?",
         "answer": "Plain and up to date is enough. If something needs strengthening before we send it, we tell you what and why — we do not quietly rewrite it behind your back."
       }
-    ],
-    "cta_heading": "Ready when you are",
-    "cta_intro": "Browse what is open now, or send an open application and we will get in touch when the right role comes in.",
-    "cta_roles": "See open roles",
-    "cta_contact": "Send an open application"
+    ]
   },
   "roles": {
     "eyebrow": "Hiring now",

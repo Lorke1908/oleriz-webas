@@ -485,22 +485,6 @@ content:
         label: Answer
         type: text
         required: true
-    - name: cta_heading
-      label: Closing panel heading
-      type: string
-      required: true
-    - name: cta_intro
-      label: Closing panel text
-      type: text
-      required: true
-    - name: cta_roles
-      label: Closing panel — roles button
-      type: string
-      required: true
-    - name: cta_contact
-      label: Closing panel — contact button
-      type: string
-      required: true
   - name: roles
     label: 'Section: open roles'
     type: object
@@ -1074,22 +1058,6 @@ content:
         label: Answer
         type: text
         required: true
-    - name: cta_heading
-      label: Closing panel heading
-      type: string
-      required: true
-    - name: cta_intro
-      label: Closing panel text
-      type: text
-      required: true
-    - name: cta_roles
-      label: Closing panel — roles button
-      type: string
-      required: true
-    - name: cta_contact
-      label: Closing panel — contact button
-      type: string
-      required: true
   - name: roles
     label: 'Section: open roles'
     type: object

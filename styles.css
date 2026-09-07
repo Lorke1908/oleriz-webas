@@ -77,20 +77,9 @@ body::before,body::after{
 }
 body::before{
   background:
-    radial-gradient(760px 500px at 4% -12%,rgba(42,92,232,.24),transparent 60%),
-    radial-gradient(700px 460px at 88% -16%,rgba(96,116,242,.19),transparent 62%),
-    radial-gradient(620px 400px at 46% 6%,rgba(56,150,248,.12),transparent 64%),
-    radial-gradient(900px 420px at 50% 74%,rgba(42,92,232,.05),transparent 70%),
-    linear-gradient(160deg,rgba(42,92,232,.08) 0%,rgba(42,92,232,0) 62%);
-}
-/* fine ruled grid, fading out before the first section */
-body::after{
-  background-image:
-    linear-gradient(to right,rgba(11,17,32,.055) 1px,transparent 1px),
-    linear-gradient(to bottom,rgba(11,17,32,.055) 1px,transparent 1px);
-  background-size:64px 64px;
-  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.75),transparent 64%);
-  mask-image:linear-gradient(to bottom,rgba(0,0,0,.75),transparent 64%);
+    radial-gradient(820px 460px at 6% -12%,rgba(42,92,232,.16),transparent 62%),
+    radial-gradient(720px 420px at 88% -14%,rgba(96,116,242,.12),transparent 64%),
+    linear-gradient(to bottom,rgba(42,92,232,.05),rgba(42,92,232,0) 70%);
 }
 .wrap{max-width:1140px;margin:0 auto;padding:0 var(--s5)}
 
@@ -250,13 +239,12 @@ section{padding:var(--s9) 0}
    Hero
    --------------------------------------------------------------- */
 .hero{padding:var(--s9) 0 var(--s9);overflow:hidden;position:relative}
-/* a large faint ring sweeping out of the top right, clipped by the section */
+/* Layered ridges along the foot of the hero. One SVG, three silhouettes,
+   stretched to the full width and clipped by the section. */
 .hero::before{
   content:"";position:absolute;z-index:-1;pointer-events:none;
-  top:-260px;right:-200px;
-  width:660px;height:660px;border-radius:50%;
-  border:1px solid rgba(42,92,232,.16);
-  box-shadow:0 0 0 70px rgba(42,92,232,.03),0 0 0 140px rgba(42,92,232,.02);
+  left:0;right:0;bottom:0;height:260px;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 260" preserveAspectRatio="none"><path fill="%232A5CE8" fill-opacity=".09" d="M0,150 L160,80 L300,150 L470,60 L640,140 L820,70 L1000,150 L1180,90 L1340,155 L1440,110 L1440,260 L0,260 Z"/><path fill="%232A5CE8" fill-opacity=".15" d="M0,190 L150,140 L320,200 L500,130 L680,195 L880,135 L1080,200 L1270,145 L1440,195 L1440,260 L0,260 Z"/><path fill="%232A5CE8" fill-opacity=".22" d="M0,225 L200,195 L400,235 L620,190 L840,235 L1060,200 L1280,240 L1440,205 L1440,260 L0,260 Z"/></svg>') bottom center/100% 100% no-repeat;
 }
 .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:var(--s8);align-items:center}
 /* Availability pill above the headline. Empty in the CMS hides it. */
@@ -546,19 +534,6 @@ section{padding:var(--s9) 0}
 .promise-card{padding:var(--s6)}
 .promise-card ul{margin-bottom:0}
 
-.cta-band{
-  background:linear-gradient(135deg,var(--accent) 0%,#1B3FA8 100%);
-  color:#fff;border-radius:var(--r-lg);
-  padding:var(--s9) var(--s7);text-align:center;
-  box-shadow:0 24px 60px -28px var(--accent-glow);
-}
-.cta-band h2{color:#fff;margin-bottom:var(--s3)}
-.cta-band p{color:rgba(255,255,255,.9);font-weight:450;font-size:18px;max-width:56ch;margin:0 auto var(--s6)}
-.cta-actions{display:flex;gap:var(--s3);justify-content:center;flex-wrap:wrap}
-.cta-band .btn{background:#fff;color:var(--accent-deep);border-color:#fff;box-shadow:none}
-.cta-band .btn:hover{background:#EEF2FE;border-color:#EEF2FE;color:var(--accent-deep)}
-.cta-band .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
-.cta-band .btn.ghost:hover{background:rgba(255,255,255,.14);border-color:#fff;color:#fff}
 
 /* ---------------------------------------------------------------
    Testimonials
@@ -728,7 +703,6 @@ footer{background:var(--ink-surface);color:var(--on-ink);padding:var(--s7) 0}
 @media (max-width:900px){
   section{padding:var(--s8) 0}
   .promise-grid{grid-template-columns:1fr;gap:var(--s6)}
-  .cta-band{padding:var(--s8) var(--s5)}
   .hero{padding:var(--s8) 0}
   .hero-grid,.contact-grid{grid-template-columns:1fr;gap:var(--s7)}
   .hero-card-stack{max-width:400px;margin:0 auto}
@@ -747,6 +721,7 @@ footer{background:var(--ink-surface);color:var(--on-ink);padding:var(--s7) 0}
   .jr-pay{justify-content:flex-start}
   .job-row .btn{justify-self:start}
 }
+
 @media (max-width:720px){
   .steps{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
