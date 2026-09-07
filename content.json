@@ -141,14 +141,13 @@
   "contact": {
     "heading": "Tell us who you're looking for",
     "intro": "Describe the role in a few sentences — we'll reply within one business day with an honest view on timeline, salary range, and whether we're the right agency for the search.",
-    "email": "hello@yourdomain.com",
-    "phone": "+370 600 00 000",
-    "phone_link": "+37060000000",
+    "email": "lorenas@oleriz.lt",
+    "phone": "+37064621476",
+    "phone_link": "+37064621476",
     "office": "Your address here",
+    "form_subject": "New enquiry from your website",
     "submit_label": "Send message",
     "form_note": "We reply within one business day. Your details are never shared.",
-    "formspree_id": "",
-    "form_subject": "New enquiry from your website",
     "fallback_note": "The contact form isn't switched on yet. Email us and we'll reply within one business day.",
     "fallback_cta": "Email us"
   },
