@@ -242,21 +242,41 @@ section{padding:var(--s9) 0}
 .hero-meta{
   margin-top:var(--s8);
   display:grid;grid-template-columns:repeat(3,1fr);
-  border-top:1px solid var(--line);
-  padding-top:var(--s5);
+  gap:var(--s3);
 }
 .hero-meta > div{
-  padding-left:var(--s5);
-  border-left:1px solid var(--line);
-  color:var(--ink-2);font-size:14px;font-weight:500;line-height:1.35;
+  position:relative;
+  padding:var(--s5) var(--s4) var(--s5) var(--s5);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+  color:var(--ink-2);font-size:13.5px;font-weight:500;line-height:1.35;
   text-wrap:balance;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease;
 }
-.hero-meta > div:first-child{padding-left:0;border-left:none}
+/* a short accent rule, so each figure has something to sit under */
+.hero-meta > div::before{
+  content:"";display:block;
+  width:22px;height:3px;border-radius:2px;
+  background:var(--accent);
+  margin-bottom:var(--s4);
+  transition:width .25s ease;
+}
+.hero-meta > div:hover{
+  transform:translateY(-3px);
+  border-color:#C7D4F5;
+  background:#fff;
+  box-shadow:var(--shadow-card);
+}
+.hero-meta > div:hover::before{width:34px}
 .hero-meta strong{
   display:block;
-  font-weight:800;font-size:29px;color:var(--ink);
-  line-height:1.1;letter-spacing:-.035em;margin-bottom:6px;
+  font-weight:800;font-size:30px;color:var(--ink);
+  line-height:1.1;letter-spacing:-.035em;margin-bottom:5px;
   font-variant-numeric:tabular-nums;
+  font-feature-settings:"tnum";
 }
 
 /* Floating job card — the hero's only ornament */
@@ -626,12 +646,7 @@ footer{background:var(--ink-surface);color:var(--on-ink);padding:var(--s7) 0}
 @media (max-width:720px){
   .steps{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
-  .hero-meta{grid-template-columns:1fr;padding-top:var(--s4)}
-  .hero-meta > div{
-    padding-left:0;border-left:none;
-    padding-top:var(--s4);border-top:1px solid var(--line);
-  }
-  .hero-meta > div:first-child{padding-top:0;border-top:none}
+  .hero-meta{grid-template-columns:1fr;gap:var(--s2)}
   .journey-step{padding-left:48px;padding-bottom:var(--s6)}
   .foot{flex-direction:column;align-items:flex-start;gap:var(--s4)}
 }

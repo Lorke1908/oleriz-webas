@@ -87,6 +87,57 @@
     });
   }
 
+  /* Hero figures count up the first time they scroll into view.
+     Whatever is typed in the CMS is preserved around the number, so
+     "230+", "14 d." and "92 %" all animate only their digits. */
+  var figures = document.querySelectorAll(".hero-meta strong");
+  var reduceMotion = window.matchMedia
+    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (figures.length && !reduceMotion && "IntersectionObserver" in window) {
+    var parseFigure = function (text) {
+      var m = /^(\D*?)(\d+(?:[.,]\d+)?)(.*)$/.exec(text);
+      if (!m) return null;
+      var digits = m[2];
+      var decimalPart = digits.split(/[.,]/)[1];
+      return {
+        prefix: m[1],
+        suffix: m[3],
+        target: parseFloat(digits.replace(",", ".")),
+        decimals: decimalPart ? decimalPart.length : 0,
+        comma: digits.indexOf(",") > -1
+      };
+    };
+
+    var countUp = function (el) {
+      var f = parseFigure(el.textContent);
+      if (!f) return;                       // no digits — leave the text alone
+      var started = null;
+      var step = function (now) {
+        if (started === null) started = now;
+        var t = Math.min((now - started) / 1100, 1);
+        var eased = 1 - Math.pow(1 - t, 3);
+        var value = (f.target * eased).toFixed(f.decimals);
+        if (f.comma) value = value.replace(".", ",");
+        el.textContent = f.prefix + value + f.suffix;
+        if (t < 1) window.requestAnimationFrame(step);
+      };
+      window.requestAnimationFrame(step);
+    };
+
+    var figureObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        figureObserver.unobserve(entry.target);
+        countUp(entry.target);
+      });
+    }, { threshold: 0.45 });
+
+    Array.prototype.forEach.call(figures, function (f) {
+      figureObserver.observe(f);
+    });
+  }
+
   /* The floating header tightens once the page has moved off the top. */
   var headerEl = document.getElementById("siteHeader");
   if (headerEl) {
