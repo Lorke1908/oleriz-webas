@@ -12,8 +12,10 @@
 :root{
   /* ink */
   --ink:#000000;
-  --ink-2:#2E3238;
-  --ink-3:#565B63;
+  --ink-2:#000000;
+  --ink-3:#000000;
+  /* placeholders stay grey: black would read as text already typed */
+  --placeholder:#6B7280;
 
   /* accent */
   --accent:#2A5CE8;
@@ -618,7 +620,7 @@ form input:focus,form select:focus,form textarea:focus{
   border-color:var(--accent);box-shadow:var(--ring);
 }
 form textarea{min-height:132px;resize:vertical;line-height:1.55}
-form ::placeholder{color:var(--ink-3);opacity:1}
+form ::placeholder{color:var(--placeholder);opacity:1}
 form .btn{align-self:flex-start;margin-top:var(--s1)}
 .form-note{font-size:13px;color:var(--ink-3)}
 .label-note{

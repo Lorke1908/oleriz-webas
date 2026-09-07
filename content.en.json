@@ -251,8 +251,7 @@
       "message": "Message",
       "message_placeholder": "e.g. We need a senior accountant, hybrid, starting within two months.",
       "cv": "CV",
-      "cv_hint": "PDF or Word, up to 10 MB.",
-      "cv_email_note": "Send your CV by email — attach it to a message to"
+      "cv_hint": "PDF or Word, up to 10 MB."
     }
   },
   "footer": {

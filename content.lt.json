@@ -251,8 +251,7 @@
       "message": "Žinutė",
       "message_placeholder": "pvz. Ieškome vyresniojo buhalterio, hibridinis darbas, pradžia per du mėnesius.",
       "cv": "Gyvenimo aprašymas (CV)",
-      "cv_hint": "PDF arba Word, iki 10 MB.",
-      "cv_email_note": "Gyvenimo aprašymą atsiųskite el. paštu — prie žinutės prisekite jį adresu"
+      "cv_hint": "PDF arba Word, iki 10 MB."
     }
   },
   "footer": {

@@ -711,13 +711,7 @@ content:
         label: CV hint text
         type: text
         required: true
-        description: Shown under the file picker when uploads are switched on.
-      - name: cv_email_note
-        label: CV text when uploads are off
-        type: text
-        required: true
-        description: Shown to candidates instead of a file picker. Your email address is added to the
-          end automatically.
+        description: Shown under the file picker. PDF and Word are accepted, up to 10 MB in total.
   - name: footer
     label: Footer
     type: object
@@ -1310,13 +1304,7 @@ content:
         label: CV hint text
         type: text
         required: true
-        description: Shown under the file picker when uploads are switched on.
-      - name: cv_email_note
-        label: CV text when uploads are off
-        type: text
-        required: true
-        description: Shown to candidates instead of a file picker. Your email address is added to the
-          end automatically.
+        description: Shown under the file picker. PDF and Word are accepted, up to 10 MB in total.
   - name: footer
     label: Footer
     type: object
@@ -1374,16 +1362,13 @@ content:
     required: true
     description: Full address of the live site, ending in a slash. Only change this if you move to a different
       domain.
-  - name: formspree_id
-    label: Formspree form ID
-    type: string
-    description: Paste the code from your Formspree form address (the part after /f/). Until this is filled
-      in, both sites show an Email us button instead of the contact form.
   - name: email
     label: Your email address
     type: string
     required: true
-    description: Shown on both language versions and used for the Email us button.
+    description: Shown on both language versions, and the address the contact form delivers to. Changing
+      it moves where enquiries go, and the new address has to be confirmed once by email before the form
+      works again.
   - name: phone
     label: Your phone number
     type: string
@@ -1398,9 +1383,3 @@ content:
     label: Office address
     type: string
     description: Leave empty if you do not have one and the line is hidden from the contact section.
-  - name: cv_upload
-    label: Allow CV uploads
-    type: boolean
-    description: 'OFF unless your Formspree plan includes file uploads. The free plan does not: a CV attached
-      to the form would be dropped without warning. While this is off, candidates are asked to email their
-      CV instead.'

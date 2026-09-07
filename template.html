@@ -171,15 +171,12 @@
       <div class="contact-line"><span>{{contact.labels.office}}</span>{{site.office}}</div>
 {{/site.office}}
     </div>
-{{#site.formspree_id}}
-{{#site.cv_upload}}
-    <form name="contact" method="POST" enctype="multipart/form-data" action="https://formspree.io/f/{{site.formspree_id}}">
-{{/site.cv_upload}}
-{{^site.cv_upload}}
-    <form name="contact" method="POST" action="https://formspree.io/f/{{site.formspree_id}}">
-{{/site.cv_upload}}
+{{#site.email}}
+    <form name="contact" method="POST" enctype="multipart/form-data" action="https://formsubmit.co/{{site.email}}">
       <input type="hidden" name="_subject" value="{{contact.form_subject}}">
       <input type="hidden" name="_next" value="{{paths.url_thanks}}">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
       <div class="form-row">
         <div><label for="f-name">{{contact.labels.name}}</label><input id="f-name" name="name" required autocomplete="name"></div>
         <div><label for="f-email">{{contact.labels.email}}</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
@@ -199,26 +196,21 @@
       </div>
 
       <div id="cvBlock" hidden>
-{{#site.cv_upload}}
         <label for="f-cv">{{contact.labels.cv}}</label>
         <input id="f-cv" name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
         <p class="field-note">{{contact.labels.cv_hint}}</p>
-{{/site.cv_upload}}
-{{^site.cv_upload}}
-        <p class="field-note">{{contact.labels.cv_email_note}} <a href="mailto:{{site.email}}">{{site.email}}</a></p>
-{{/site.cv_upload}}
       </div>
       <div><label for="f-msg">{{contact.labels.message}}</label><textarea id="f-msg" name="message" required placeholder="{{contact.labels.message_placeholder}}"></textarea></div>
       <button class="btn" type="submit">{{contact.submit_label}}</button>
       <p class="form-note">{{contact.form_note}}</p>
     </form>
-{{/site.formspree_id}}
-{{^site.formspree_id}}
+{{/site.email}}
+{{^site.email}}
     <div class="form-fallback">
       <p>{{contact.fallback_note}}</p>
       <a class="btn" href="mailto:{{site.email}}">{{contact.fallback_cta}}</a>
     </div>
-{{/site.formspree_id}}
+{{/site.email}}
   </div>
 </section>
 
