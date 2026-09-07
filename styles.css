@@ -326,7 +326,20 @@ section{padding:var(--s9) 0}
   padding:var(--s6) var(--s6) var(--s5);
   box-shadow:var(--shadow-lift);
 }
-.job-card.featured{position:relative;z-index:2}
+.job-card.featured{position:relative;z-index:2;cursor:pointer}
+.job-card.featured:hover{border-color:#C7D4F5;box-shadow:var(--shadow-lift)}
+/* the link covers the card, so a click anywhere on it follows through.
+   Hover is shadow-only: the float animation owns the transform. */
+.jc-apply::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  border-radius:var(--r-lg);
+}
+.job-card.featured:hover .jc-apply{
+  background:var(--accent);border-color:var(--accent);color:#fff;gap:9px;
+}
+.jc-apply:focus-visible::before{
+  outline:2px solid var(--accent);outline-offset:6px;border-radius:var(--r-lg);
+}
 .job-card.behind{
   position:absolute;inset:0;
   transform:rotate(3deg) translate(16px,20px);
