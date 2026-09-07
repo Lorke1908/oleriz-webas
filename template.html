@@ -17,6 +17,11 @@
         <a class="btn" href="#contact">{{hero.cta_primary}}</a>
         <a class="btn ghost" href="{{paths.roles}}">{{hero.cta_secondary}}</a>
       </div>
+      <div class="hero-meta">
+{{#hero.stats}}
+        <div><strong>{{value}}</strong>{{label}}</div>
+{{/hero.stats}}
+      </div>
     </div>
 
     <div class="hero-card-stack" aria-hidden="true">
@@ -44,16 +49,6 @@
           <a class="jc-apply" href="{{paths.roles}}" tabindex="-1">{{hero.card.cta}}</a>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div class="hero-meta">
-{{#hero.stats}}
-      <div>
-        <strong>{{value}}</strong>{{label}}
-      </div>
-{{/hero.stats}}
     </div>
   </div>
 </section>
