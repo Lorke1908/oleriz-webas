@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "Northbound — Recruitment that fits",
+    "description": "Northbound is a recruitment agency placing vetted professionals in roles they'll stay in. Browse open roles or hire with us.",
+    "site_url": "https://lorke1908.github.io/oleriz-webas/"
+  },
+  "brand": {
+    "name_start": "North",
+    "name_end": "bound"
+  },
+  "hero": {
+    "heading": "The right person, in the right seat,",
+    "heading_accent": "still there next year.",
+    "intro": "Northbound is a recruitment agency for companies tired of slow shortlists and bad fits. We meet every candidate before you do — so you only interview people worth your time.",
+    "cta_primary": "Hire with us",
+    "cta_secondary": "Browse open roles",
+    "stats": [
+      {
+        "value": "230+",
+        "label": "placements made"
+      },
+      {
+        "value": "14 days",
+        "label": "average to shortlist"
+      },
+      {
+        "value": "92%",
+        "label": "still in role after a year"
+      }
+    ],
+    "card": {
+      "title": "Senior Accountant",
+      "badge": "New this week",
+      "firm": "Manufacturing group · 400 employees",
+      "tags": [
+        "Full-time",
+        "Hybrid",
+        "Finance"
+      ],
+      "salary": "€3,200–3,800",
+      "salary_note": "gross / month",
+      "cta": "View role"
+    }
+  },
+  "promises": {
+    "heading": "One agency, two promises",
+    "intro": "Good recruitment works in both directions. Companies get people who stay; candidates get roles they actually want.",
+    "employers": {
+      "heading": "For employers",
+      "intro": "Stop sifting through a hundred CVs to find three worth calling.",
+      "points": [
+        "Every candidate interviewed and reference-checked before you see them",
+        "A shortlist of 3–5 people, not a pile of applications",
+        "Salary benchmarking so your offer lands the first time",
+        "Replacement guarantee if a placement doesn't work out"
+      ],
+      "cta": "Start a search"
+    },
+    "candidates": {
+      "heading": "For candidates",
+      "intro": "No ghosting, no mystery roles, no CVs sent without your consent.",
+      "points": [
+        "Real salary ranges published on every role",
+        "Honest feedback after every interview, within 48 hours",
+        "Your CV never shared without your explicit yes",
+        "Free — candidates never pay us anything"
+      ],
+      "cta": "See open roles"
+    }
+  },
+  "process": {
+    "heading": "From brief to signed offer in four steps",
+    "intro": "A search that drags on costs you more than a fee ever will. Here's how we keep it moving.",
+    "steps": [
+      {
+        "heading": "Intake call",
+        "body": "45 minutes on the role, the team, and what \"great\" looks like — not just the job description."
+      },
+      {
+        "heading": "Search & screen",
+        "body": "We approach people directly, interview every candidate, and check references early, not last."
+      },
+      {
+        "heading": "Shortlist",
+        "body": "3–5 vetted candidates within two weeks, each with our written assessment and salary expectations."
+      },
+      {
+        "heading": "Offer & onboarding",
+        "body": "We handle negotiation and stay in touch through the first 90 days to make sure it sticks."
+      }
+    ]
+  },
+  "roles": {
+    "heading": "Open roles",
+    "intro": "Every listing shows the real salary range. Apply directly, or send an open application if nothing fits yet.",
+    "empty_message": "No open roles in this category right now — check back soon or send an open application.",
+    "note_before": "Nothing that fits?",
+    "note_link": "Send an open application",
+    "note_after": "and we'll contact you when the right role comes in."
+  },
+  "testimonials": {
+    "heading": "What clients say once the seat is filled",
+    "items": [
+      {
+        "quote": "“We'd been searching for a head of logistics for five months. Northbound had a signed offer in three weeks — and she's still with us two years later.”",
+        "author": "Operations Director",
+        "company": "Logistics company, 250 employees"
+      },
+      {
+        "quote": "“The shortlist was three people. We would happily have hired all three. That has never happened to us with an agency before.”",
+        "author": "Managing Director",
+        "company": "Engineering firm, 80 employees"
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Questions we hear before every search",
+    "items": [
+      {
+        "question": "What does a search cost, and when do we pay?",
+        "answer": "Our fee is a percentage of the placed candidate's first-year salary, invoiced only when they sign. No upfront costs, no charge if we don't fill the role."
+      },
+      {
+        "question": "How long until we see candidates?",
+        "answer": "You'll have a shortlist of 3–5 interviewed, reference-checked candidates within two weeks of the intake call for most roles. Niche or executive searches can take longer — we'll tell you honestly at the start."
+      },
+      {
+        "question": "What if the placement doesn't work out?",
+        "answer": "Every placement comes with a replacement guarantee: if the person leaves within the guarantee period, we run the search again at no additional fee."
+      },
+      {
+        "question": "Do candidates pay anything?",
+        "answer": "Never. Our services are completely free for candidates — the hiring company pays our fee."
+      },
+      {
+        "question": "Is the search confidential?",
+        "answer": "Yes, on both sides. We can run fully confidential searches for sensitive replacements, and we never share a candidate's CV with anyone without their explicit consent."
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Tell us who you're looking for",
+    "intro": "Describe the role in a few sentences — we'll reply within one business day with an honest view on timeline, salary range, and whether we're the right agency for the search.",
+    "email": "hello@yourdomain.com",
+    "phone": "+370 600 00 000",
+    "phone_link": "+37060000000",
+    "office": "Your address here",
+    "submit_label": "Send message",
+    "form_note": "We reply within one business day. Your details are never shared.",
+    "formspree_id": "",
+    "form_subject": "New enquiry from your website",
+    "fallback_note": "The contact form isn't switched on yet. Email us and we'll reply within one business day.",
+    "fallback_cta": "Email us"
+  },
+  "footer": {
+    "copyright": "© 2026 Northbound Recruitment. All rights reserved."
+  }
+}

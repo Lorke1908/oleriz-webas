@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Northbound — Recruitment that fits</title>
-<meta name="description" content="Northbound is a recruitment agency placing vetted professionals in roles they'll stay in. Browse open roles or hire with us.">
+<title>{{meta.title}}</title>
+<meta name="description" content="{{meta.description}}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -260,6 +260,8 @@ input,textarea,select{
 input:focus,textarea:focus,select:focus{border-color:var(--pine)}
 textarea{resize:vertical;min-height:120px}
 .form-note{font-size:13.5px;color:var(--ink-soft)}
+.form-fallback{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px}
+.form-fallback p{margin-bottom:20px;color:var(--ink-soft)}
 
 /* ---------- Footer ---------- */
 footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(--ink-soft)}
@@ -297,7 +299,7 @@ footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#">North<span>bound</span></a>
+    <a class="logo" href="#">{{brand.name_start}}<span>{{brand.name_end}}</span></a>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#202721" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
@@ -314,16 +316,16 @@ footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <h1>The right person, in the right seat, <em>still there next year.</em></h1>
-      <p>Northbound is a recruitment agency for companies tired of slow shortlists and bad fits. We meet every candidate before you do — so you only interview people worth your time.</p>
+      <h1>{{hero.heading}} <em>{{hero.heading_accent}}</em></h1>
+      <p>{{hero.intro}}</p>
       <div class="hero-actions">
-        <a class="btn" href="#contact">Hire with us</a>
-        <a class="btn ghost" href="#roles">Browse open roles</a>
+        <a class="btn" href="#contact">{{hero.cta_primary}}</a>
+        <a class="btn ghost" href="#roles">{{hero.cta_secondary}}</a>
       </div>
       <div class="hero-meta">
-        <div><strong>230+</strong>placements made</div>
-        <div><strong>14 days</strong>average to shortlist</div>
-        <div><strong>92%</strong>still in role after a year</div>
+{{#hero.stats}}
+        <div><strong>{{value}}</strong>{{label}}</div>
+{{/hero.stats}}
       </div>
     </div>
 
@@ -332,16 +334,18 @@ footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(
       <div class="job-card behind"></div>
       <div class="job-card featured">
         <div class="jc-top">
-          <div class="jc-title">Senior Accountant</div>
-          <div class="jc-badge">New this week</div>
+          <div class="jc-title">{{hero.card.title}}</div>
+          <div class="jc-badge">{{hero.card.badge}}</div>
         </div>
-        <div class="jc-firm">Manufacturing group · 400 employees</div>
+        <div class="jc-firm">{{hero.card.firm}}</div>
         <div class="jc-tags">
-          <span>Full-time</span><span>Hybrid</span><span>Finance</span>
+{{#hero.card.tags}}
+          <span>{{.}}</span>
+{{/hero.card.tags}}
         </div>
         <div class="jc-foot">
-          <div class="jc-salary">€3,200–3,800 <small>gross / month</small></div>
-          <a class="jc-apply" href="#roles">View role</a>
+          <div class="jc-salary">{{hero.card.salary}} <small>{{hero.card.salary_note}}</small></div>
+          <a class="jc-apply" href="#roles">{{hero.card.cta}}</a>
         </div>
       </div>
     </div>
@@ -352,31 +356,29 @@ footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(
 <section class="wash" id="employers">
   <div class="wrap">
     <div class="section-head">
-      <h2>One agency, two promises</h2>
-      <p>Good recruitment works in both directions. Companies get people who stay; candidates get roles they actually want.</p>
+      <h2>{{promises.heading}}</h2>
+      <p>{{promises.intro}}</p>
     </div>
     <div class="split">
       <div class="split-card">
-        <h3>For employers</h3>
-        <p>Stop sifting through a hundred CVs to find three worth calling.</p>
+        <h3>{{promises.employers.heading}}</h3>
+        <p>{{promises.employers.intro}}</p>
         <ul>
-          <li>Every candidate interviewed and reference-checked before you see them</li>
-          <li>A shortlist of 3–5 people, not a pile of applications</li>
-          <li>Salary benchmarking so your offer lands the first time</li>
-          <li>Replacement guarantee if a placement doesn't work out</li>
+{{#promises.employers.points}}
+          <li>{{.}}</li>
+{{/promises.employers.points}}
         </ul>
-        <a class="btn" href="#contact">Start a search</a>
+        <a class="btn" href="#contact">{{promises.employers.cta}}</a>
       </div>
       <div class="split-card">
-        <h3>For candidates</h3>
-        <p>No ghosting, no mystery roles, no CVs sent without your consent.</p>
+        <h3>{{promises.candidates.heading}}</h3>
+        <p>{{promises.candidates.intro}}</p>
         <ul>
-          <li>Real salary ranges published on every role</li>
-          <li>Honest feedback after every interview, within 48 hours</li>
-          <li>Your CV never shared without your explicit yes</li>
-          <li>Free — candidates never pay us anything</li>
+{{#promises.candidates.points}}
+          <li>{{.}}</li>
+{{/promises.candidates.points}}
         </ul>
-        <a class="btn ghost" href="#roles">See open roles</a>
+        <a class="btn ghost" href="#roles">{{promises.candidates.cta}}</a>
       </div>
     </div>
   </div>
@@ -386,26 +388,16 @@ footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(
 <section id="process">
   <div class="wrap">
     <div class="section-head">
-      <h2>From brief to signed offer in four steps</h2>
-      <p>A search that drags on costs you more than a fee ever will. Here's how we keep it moving.</p>
+      <h2>{{process.heading}}</h2>
+      <p>{{process.intro}}</p>
     </div>
     <div class="steps">
+{{#process.steps}}
       <div class="step">
-        <h3>Intake call</h3>
-        <p>45 minutes on the role, the team, and what "great" looks like — not just the job description.</p>
+        <h3>{{heading}}</h3>
+        <p>{{body}}</p>
       </div>
-      <div class="step">
-        <h3>Search &amp; screen</h3>
-        <p>We approach people directly, interview every candidate, and check references early, not last.</p>
-      </div>
-      <div class="step">
-        <h3>Shortlist</h3>
-        <p>3–5 vetted candidates within two weeks, each with our written assessment and salary expectations.</p>
-      </div>
-      <div class="step">
-        <h3>Offer &amp; onboarding</h3>
-        <p>We handle negotiation and stay in touch through the first 90 days to make sure it sticks.</p>
-      </div>
+{{/process.steps}}
     </div>
   </div>
 </section>
@@ -414,15 +406,15 @@ footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(
 <section class="wash" id="roles">
   <div class="wrap">
     <div class="section-head">
-      <h2>Open roles</h2>
-      <p>Every listing shows the real salary range. Apply directly, or send an open application if nothing fits yet.</p>
+      <h2>{{roles.heading}}</h2>
+      <p>{{roles.intro}}</p>
     </div>
 
     <div class="roles-toolbar" id="filters" role="group" aria-label="Filter roles by category"></div>
     <div id="jobList"></div>
-    <div class="roles-empty" id="rolesEmpty">No open roles in this category right now — check back soon or send an open application.</div>
+    <div class="roles-empty" id="rolesEmpty">{{roles.empty_message}}</div>
 
-    <p class="roles-note">Nothing that fits? <a href="#contact">Send an open application</a> and we'll contact you when the right role comes in.</p>
+    <p class="roles-note">{{roles.note_before}} <a href="#contact">{{roles.note_link}}</a> {{roles.note_after}}</p>
   </div>
 </section>
 
@@ -430,17 +422,15 @@ footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(
 <section>
   <div class="wrap">
     <div class="section-head">
-      <h2>What clients say once the seat is filled</h2>
+      <h2>{{testimonials.heading}}</h2>
     </div>
     <div class="t-grid">
+{{#testimonials.items}}
       <div class="t-card">
-        <blockquote>“We'd been searching for a head of logistics for five months. Northbound had a signed offer in three weeks — and she's still with us two years later.”</blockquote>
-        <cite><strong>Operations Director</strong>Logistics company, 250 employees</cite>
+        <blockquote>{{quote}}</blockquote>
+        <cite><strong>{{author}}</strong>{{company}}</cite>
       </div>
-      <div class="t-card">
-        <blockquote>“The shortlist was three people. We would happily have hired all three. That has never happened to us with an agency before.”</blockquote>
-        <cite><strong>Managing Director</strong>Engineering firm, 80 employees</cite>
-      </div>
+{{/testimonials.items}}
     </div>
   </div>
 </section>
@@ -449,29 +439,15 @@ footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <h2>Questions we hear before every search</h2>
+      <h2>{{faq.heading}}</h2>
     </div>
     <div class="faq-list">
+{{#faq.items}}
       <details>
-        <summary>What does a search cost, and when do we pay?</summary>
-        <p>Our fee is a percentage of the placed candidate's first-year salary, invoiced only when they sign. No upfront costs, no charge if we don't fill the role.</p>
+        <summary>{{question}}</summary>
+        <p>{{answer}}</p>
       </details>
-      <details>
-        <summary>How long until we see candidates?</summary>
-        <p>You'll have a shortlist of 3–5 interviewed, reference-checked candidates within two weeks of the intake call for most roles. Niche or executive searches can take longer — we'll tell you honestly at the start.</p>
-      </details>
-      <details>
-        <summary>What if the placement doesn't work out?</summary>
-        <p>Every placement comes with a replacement guarantee: if the person leaves within the guarantee period, we run the search again at no additional fee.</p>
-      </details>
-      <details>
-        <summary>Do candidates pay anything?</summary>
-        <p>Never. Our services are completely free for candidates — the hiring company pays our fee.</p>
-      </details>
-      <details>
-        <summary>Is the search confidential?</summary>
-        <p>Yes, on both sides. We can run fully confidential searches for sensitive replacements, and we never share a candidate's CV with anyone without their explicit consent.</p>
-      </details>
+{{/faq.items}}
     </div>
   </div>
 </section>
@@ -480,14 +456,16 @@ footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(
 <section class="wash" id="contact">
   <div class="wrap contact-grid">
     <div class="contact-info">
-      <h2>Tell us who you're looking for</h2>
-      <p>Describe the role in a few sentences — we'll reply within one business day with an honest view on timeline, salary range, and whether we're the right agency for the search.</p>
-      <div class="contact-line"><span>Email</span><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></div>
-      <div class="contact-line"><span>Phone</span><a href="tel:+37060000000">+370 600 00 000</a></div>
-      <div class="contact-line"><span>Office</span>Your address here</div>
+      <h2>{{contact.heading}}</h2>
+      <p>{{contact.intro}}</p>
+      <div class="contact-line"><span>Email</span><a href="mailto:{{contact.email}}">{{contact.email}}</a></div>
+      <div class="contact-line"><span>Phone</span><a href="tel:{{contact.phone_link}}">{{contact.phone}}</a></div>
+      <div class="contact-line"><span>Office</span>{{contact.office}}</div>
     </div>
-    <form name="contact" method="POST" data-netlify="true" action="/thanks">
-      <input type="hidden" name="form-name" value="contact">
+{{#contact.formspree_id}}
+    <form name="contact" method="POST" action="https://formspree.io/f/{{contact.formspree_id}}">
+      <input type="hidden" name="_subject" value="{{contact.form_subject}}">
+      <input type="hidden" name="_next" value="{{meta.site_url}}thanks.html">
       <div class="form-row">
         <div><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
         <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
@@ -500,15 +478,22 @@ footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(
         </select>
       </div>
       <div><label for="f-msg">Message</label><textarea id="f-msg" name="message" required placeholder="e.g. We need a senior accountant, hybrid, starting within two months."></textarea></div>
-      <button class="btn" type="submit">Send message</button>
-      <p class="form-note">We reply within one business day. Your details are never shared.</p>
+      <button class="btn" type="submit">{{contact.submit_label}}</button>
+      <p class="form-note">{{contact.form_note}}</p>
     </form>
+{{/contact.formspree_id}}
+{{^contact.formspree_id}}
+    <div class="form-fallback">
+      <p>{{contact.fallback_note}}</p>
+      <a class="btn" href="mailto:{{contact.email}}">{{contact.fallback_cta}}</a>
+    </div>
+{{/contact.formspree_id}}
   </div>
 </section>
 
 <footer>
   <div class="wrap foot">
-    <div>© 2026 Northbound Recruitment. All rights reserved.</div>
+    <div>{{footer.copyright}}</div>
     <div>
       <a href="#employers">For employers</a>
       <a href="#roles">Open roles</a>

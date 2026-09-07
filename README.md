@@ -1,60 +1,72 @@
 # Northbound — recruitment agency site
 
-A static one-page site. No build step, no dependencies.
+Live at **https://lorke1908.github.io/oleriz-webas/**
+
+## Editing the site
+
+Everything is editable at **[app.pagescms.org](https://app.pagescms.org)** — sign in
+with GitHub, pick this repo. Two screens:
+
+- **Job postings** — add, edit and remove open roles
+- **Website text** — every heading, paragraph, bullet, FAQ answer and your contact details
+
+Save, and the site updates itself in about a minute. You never need to touch the
+files below.
+
+## Files
 
 | File | What it is |
 |---|---|
-| `index.html` | The whole site — markup, CSS and JS inline |
-| `jobs.json` | **The job postings.** Edit this to change what's listed |
-| `thanks.html` | Confirmation page shown after the contact form is sent |
-| `.github/workflows/deploy.yml` | Publishes to GitHub Pages on every push to `main` |
+| `content.json` | All the words on the page ("Website text" in the editor) |
+| `jobs.json` | The job postings ("Job postings" in the editor) |
+| `template.html` | The page layout, styling and scripts |
+| `build.py` | Puts `content.json` into `template.html` to produce `index.html` |
+| `thanks.html` | Confirmation page after the contact form is sent |
+| `.pages.yml` | Defines the editing screens |
+| `.github/workflows/deploy.yml` | Rebuilds and publishes on every push to `main` |
 
-## Adding or removing a job
+**`index.html` is generated — do not edit it.** It is rebuilt from
+`template.html` + `content.json` on every deploy and is not stored in the repo.
+Edit `template.html` for layout, `content.json` for words.
 
-Edit `jobs.json` and push. Nothing else needs touching — the category
-filter chips are generated from whatever categories are in the file.
-
-```json
-{
-  "title": "Senior Accountant",
-  "team": "Manufacturing group · 400 employees",
-  "category": "Finance",
-  "location": "Hybrid",
-  "type": "Full-time",
-  "salary": "€3,200–3,800 gross/mo",
-  "experience": "5+ years",
-  "level": "Senior",
-  "link": "#contact"
-}
-```
-
-`title`, `team`, `category`, `location`, `type` and `salary` are required.
-`experience` and `level` are optional. `link` is where **Apply** goes —
-leave it as `"#contact"` to send people to the contact form.
-
-An empty list (`[]`) is fine: the page shows a "no open roles" message.
-
-Check the file is valid before pushing — a JSON syntax error means no roles render:
+## Working locally
 
 ```
-py -c "import json,io; json.load(io.open('jobs.json',encoding='utf-8')); print('ok')"
+py build.py            # regenerate index.html
+py -m http.server 8000 # then open http://localhost:8000
 ```
 
-## Previewing locally
+`jobs.json` is loaded with `fetch()`, which browsers block on `file://` — so open
+the site through that local server, not by double-clicking `index.html`.
 
-`jobs.json` is loaded with `fetch()`, which browsers block on `file://`.
-Opening `index.html` by double-clicking will show no roles. Serve it instead:
+Check both data files parse before pushing:
 
 ```
-py -m http.server 8000
+py -c "import json,io; [json.load(io.open(f,encoding='utf-8')) for f in ('content.json','jobs.json')]; print('ok')"
 ```
 
-then open <http://localhost:8000>. Press Ctrl+C to stop.
+## The contact form
 
-## Deploying
+The form posts to [Formspree](https://formspree.io). To switch it on:
 
-Push to `main` and the workflow publishes the site. Watch it under the
-repo's **Actions** tab; the live URL is on the **Settings → Pages** screen.
+1. Create a free Formspree account and a new form.
+2. Formspree gives you an address like `https://formspree.io/f/abcdwxyz`.
+3. Put the last part (`abcdwxyz`) into **Website text → Section: Contact →
+   Formspree form ID**.
 
-One-time setup after the first push: **Settings → Pages → Build and
-deployment → Source → GitHub Actions**.
+Until that field is filled in, the page shows an "Email us" button instead of a
+form, so visitors always have a way to reach you. Submissions redirect to
+`thanks.html`.
+
+## Templating
+
+`build.py` implements a small subset of Mustache:
+
+- `{{ key }}` and `{{ nested.key }}` — insert a value, HTML-escaped
+- `{{#key}}` … `{{/key}}` on their own lines — repeat for each item in a list,
+  or render once if the value is set; `{{ . }}` is the item itself
+- `{{^key}}` … `{{/key}}` — render only when the value is empty or missing
+
+A missing key fails the build with a clear message rather than publishing a page
+with a hole in it. Because the deploy only publishes on a successful build, a
+broken edit leaves the previous version live.
