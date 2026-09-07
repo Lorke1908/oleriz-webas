@@ -241,13 +241,22 @@ section{padding:var(--s10) 0}
    Hero
    --------------------------------------------------------------- */
 .hero{padding:var(--s9) 0 var(--s9);overflow:hidden;position:relative}
-/* Layered ridges along the foot of the hero. One SVG, three silhouettes,
-   stretched to the full width and clipped by the section. */
-.hero::before{
-  content:"";position:absolute;z-index:-1;pointer-events:none;
-  left:0;right:0;bottom:0;height:260px;
-  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 260" preserveAspectRatio="none"><path fill="%232A5CE8" fill-opacity=".09" d="M0,150 L160,80 L300,150 L470,60 L640,140 L820,70 L1000,150 L1180,90 L1340,155 L1440,110 L1440,260 L0,260 Z"/><path fill="%232A5CE8" fill-opacity=".15" d="M0,190 L150,140 L320,200 L500,130 L680,195 L880,135 L1080,200 L1270,145 L1440,195 L1440,260 L0,260 Z"/><path fill="%232A5CE8" fill-opacity=".22" d="M0,225 L200,195 L400,235 L620,190 L840,235 L1060,200 L1280,240 L1440,205 L1440,260 L0,260 Z"/></svg>') bottom center/100% 100% no-repeat;
+/* Ridges along the foot of the hero, one element per silhouette so each can
+   drift at its own rate as the page scrolls. --sy is the scroll offset, set
+   from script; nearer layers have a larger --depth and so travel further. */
+.ridges{
+  position:absolute;z-index:-1;pointer-events:none;
+  left:0;right:0;bottom:0;height:280px;
+  overflow:hidden;
 }
+.ridge{
+  position:absolute;left:-3%;right:-3%;bottom:-40px;height:100%;
+  background-repeat:no-repeat;background-position:bottom center;background-size:100% 100%;
+  transform:translateY(calc(var(--sy,0) * var(--depth) * 1px));
+}
+.ridge-1{--depth:.05;background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 260" preserveAspectRatio="none"><path fill="%232A5CE8" fill-opacity=".09" d="M0,150 L160,80 L300,150 L470,60 L640,140 L820,70 L1000,150 L1180,90 L1340,155 L1440,110 L1440,260 L0,260 Z"/></svg>')}
+.ridge-2{--depth:.12;background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 260" preserveAspectRatio="none"><path fill="%232A5CE8" fill-opacity=".15" d="M0,190 L150,140 L320,200 L500,130 L680,195 L880,135 L1080,200 L1270,145 L1440,195 L1440,260 L0,260 Z"/></svg>')}
+.ridge-3{--depth:.21;background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 260" preserveAspectRatio="none"><path fill="%232A5CE8" fill-opacity=".22" d="M0,225 L200,195 L400,235 L620,190 L840,235 L1060,200 L1280,240 L1440,205 L1440,260 L0,260 Z"/></svg>')}
 .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:var(--s8);align-items:center}
 /* Availability pill above the headline. Empty in the CMS hides it. */
 .hero-status{
@@ -393,6 +402,12 @@ section{padding:var(--s10) 0}
 .jc-apply:hover{background:var(--accent);border-color:var(--accent);color:#fff;gap:9px}
 
 @media (prefers-reduced-motion:no-preference){
+  body::before{animation:washDrift 26s ease-in-out infinite alternate}
+  @keyframes washDrift{
+    from{transform:translate3d(0,0,0) scale(1)}
+    to{transform:translate3d(-2.5%,1.5%,0) scale(1.07)}
+  }
+  .ridge{will-change:transform}
   .reveal{
     opacity:0;transform:translateY(24px);
     transition:opacity .75s cubic-bezier(.22,.7,.24,1),

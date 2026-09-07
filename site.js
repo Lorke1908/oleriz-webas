@@ -166,21 +166,28 @@
     }
   }
 
-  /* The floating header tightens once the page has moved off the top. */
+  /* One scroll handler for everything that reacts to scrolling: the header
+     tightening, and the ridge layers drifting at their own rates. */
   var headerEl = document.getElementById("siteHeader");
-  if (headerEl) {
+  var ridgesEl = document.querySelector(".ridges");
+  var parallax = ridgesEl && !reduceMotion;
+
+  if (headerEl || parallax) {
     var ticking = false;
-    var syncHeader = function () {
-      headerEl.classList.toggle("is-scrolled", window.scrollY > 8);
+    var onScroll = function () {
+      var y = window.scrollY || window.pageYOffset || 0;
+      if (headerEl) headerEl.classList.toggle("is-scrolled", y > 8);
+      // only worth moving while the hero is still on screen
+      if (parallax && y < 1200) ridgesEl.style.setProperty("--sy", Math.round(y));
       ticking = false;
     };
     window.addEventListener("scroll", function () {
       if (!ticking) {
         ticking = true;
-        window.requestAnimationFrame(syncHeader);
+        window.requestAnimationFrame(onScroll);
       }
     }, { passive: true });
-    syncHeader();
+    onScroll();
   }
 
   /* The CV block only concerns candidates, so it appears when they say so.
