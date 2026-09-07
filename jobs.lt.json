@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Vyresnysis buhalteris",
+    "team": "Gamybos įmonių grupė · 400 darbuotojų",
+    "category": "Finansai",
+    "location": "Hibridinis",
+    "type": "Visa darbo diena",
+    "salary": "3 200–3 800 € bruto/mėn.",
+    "experience": "5+ metų patirtis",
+    "level": "Vyresnysis specialistas",
+    "link": "#contact"
+  },
+  {
+    "title": "Sandėlio komandos vadovas",
+    "team": "Logistikos įmonė · 250 darbuotojų",
+    "category": "Operacijos",
+    "location": "Vietoje",
+    "type": "Visa darbo diena",
+    "salary": "2 400–2 900 € bruto/mėn.",
+    "experience": "3+ metų patirtis",
+    "level": "Vidutinio lygio",
+    "link": "#contact"
+  },
+  {
+    "title": "Pardavimų vadybininkas (B2B)",
+    "team": "Pramoninės įrangos platintojas",
+    "category": "Pardavimai",
+    "location": "Hibridinis",
+    "type": "Visa darbo diena",
+    "salary": "2 800–3 400 € + premijos",
+    "experience": "4+ metų patirtis",
+    "level": "Vidutinio lygio",
+    "link": "#contact"
+  },
+  {
+    "title": "Personalo specialistas",
+    "team": "Prekybos tinklas · 600 darbuotojų",
+    "category": "Personalas",
+    "location": "Vietoje",
+    "type": "Visa darbo diena",
+    "salary": "2 200–2 700 € bruto/mėn.",
+    "experience": "2+ metų patirtis",
+    "level": "Jaunesnysis–vidutinio lygio",
+    "link": "#contact"
+  },
+  {
+    "title": "Front-end programuotojas",
+    "team": "Produkto įmonė, finansinės technologijos",
+    "category": "IT",
+    "location": "Nuotolinis",
+    "type": "Visa darbo diena",
+    "salary": "4 000–5 500 € bruto/mėn.",
+    "experience": "4+ metų patirtis",
+    "level": "Vyresnysis specialistas",
+    "link": "#contact"
+  }
+]

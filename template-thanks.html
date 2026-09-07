@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{paths.lang}}">
+<head>
+{{> partials/head.html }}
+</head>
+<body>
+
+{{> partials/header.html }}
+
+<div class="thanks-wrap">
+  <div class="thanks-card">
+    <div class="thanks-tick">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5" stroke="#2A5CE8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h1>{{thanks.heading}}</h1>
+    <p>{{thanks.body}}</p>
+    <a class="btn" href="{{paths.home}}">{{thanks.cta}}</a>
+  </div>
+</div>
+
+{{> partials/footer.html }}
+
+<script src="{{paths.site_js}}"></script>
+</body>
+</html>

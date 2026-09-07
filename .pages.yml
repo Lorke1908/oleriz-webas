@@ -1,418 +1,1102 @@
-# Config for Pages CMS (app.pagescms.org) — the visual editor for this site.
-# Editing this file changes what the editing screens look like, not the site itself.
+# Config for Pages CMS (app.pagescms.org) — it defines the editing screens.
+# Generated to keep the two languages identical; edit by hand only if you
+# change the same thing in BOTH 'Website text' screens.
+#
+# Screens:
+#   Job postings — Lithuanian   -> jobs.lt.json
+#   Job postings — English      -> jobs.en.json
+#   Website text — Lithuanian   -> content.lt.json
+#   Website text — English      -> content.en.json
+#   Site settings               -> site.json (shared by both languages)
 
 content:
-  - name: jobs
-    label: Job postings
-    type: file
-    path: jobs.json
-    format: json
-    list: true
+- name: jobs_lt
+  label: Job postings — Lithuanian
+  type: file
+  path: jobs.lt.json
+  format: json
+  list: true
+  fields:
+  - name: title
+    label: Job title
+    type: string
+    required: true
+    description: The role as a candidate would recognise it.
+  - name: team
+    label: Company
+    type: string
+    required: true
+    description: Small grey line under the title. Keep clients anonymous unless they agreed — e.g. "Gamybos
+      įmonių grupė · 400 darbuotojų".
+  - name: category
+    label: Category
+    type: select
+    required: true
+    default: Operacijos
+    description: Decides which filter button this role appears under.
+    options:
+      values:
+      - Finansai
+      - Operacijos
+      - Pardavimai
+      - Personalas
+      - IT
+      - Rinkodara
+      - Inžinerija
+      - Logistika
+      - Klientų aptarnavimas
+      - Teisė
+      - Vadovavimas
+  - name: location
+    label: Work location
+    type: select
+    required: true
+    default: Vietoje
+    options:
+      values:
+      - Vietoje
+      - Hibridinis
+      - Nuotolinis
+  - name: type
+    label: Contract type
+    type: select
+    required: true
+    default: Visa darbo diena
+    options:
+      values:
+      - Visa darbo diena
+      - Ne visa darbo diena
+      - Pagal sutartį
+      - Terminuota
+      - Praktika
+  - name: salary
+    label: Salary
+    type: string
+    required: true
+    description: Shown exactly as typed. e.g. "3 200–3 800 € bruto/mėn." or "2 800–3 400 € + premijos".
+  - name: experience
+    label: Experience needed
+    type: string
+    description: Optional. e.g. "5+ metų patirtis".
+  - name: level
+    label: Seniority
+    type: string
+    description: Optional. e.g. "Vyresnysis specialistas", "Vidutinio lygio".
+  - name: link
+    label: Apply link
+    type: string
+    default: '#contact'
+    description: 'Leave as #contact to send applicants to the contact form, or paste a full web address.'
+- name: jobs_en
+  label: Job postings — English
+  type: file
+  path: jobs.en.json
+  format: json
+  list: true
+  fields:
+  - name: title
+    label: Job title
+    type: string
+    required: true
+    description: The role as a candidate would recognise it.
+  - name: team
+    label: Company
+    type: string
+    required: true
+    description: Small grey line under the title. Keep clients anonymous unless they agreed — e.g. "Manufacturing
+      group · 400 employees".
+  - name: category
+    label: Category
+    type: select
+    required: true
+    default: Operations
+    description: Decides which filter button this role appears under.
+    options:
+      values:
+      - Finance
+      - Operations
+      - Sales
+      - HR
+      - IT
+      - Marketing
+      - Engineering
+      - Logistics
+      - Customer Service
+      - Legal
+      - Management
+  - name: location
+    label: Work location
+    type: select
+    required: true
+    default: On-site
+    options:
+      values:
+      - On-site
+      - Hybrid
+      - Remote
+  - name: type
+    label: Contract type
+    type: select
+    required: true
+    default: Full-time
+    options:
+      values:
+      - Full-time
+      - Part-time
+      - Contract
+      - Temporary
+      - Internship
+  - name: salary
+    label: Salary
+    type: string
+    required: true
+    description: Shown exactly as typed. e.g. "€3,200–3,800 gross/mo" or "€2,800–3,400 + bonus".
+  - name: experience
+    label: Experience needed
+    type: string
+    description: Optional. e.g. "5+ years".
+  - name: level
+    label: Seniority
+    type: string
+    description: Optional. e.g. "Senior", "Mid-level".
+  - name: link
+    label: Apply link
+    type: string
+    default: '#contact'
+    description: 'Leave as #contact to send applicants to the contact form, or paste a full web address.'
+- name: text_lt
+  label: Website text — Lithuanian
+  type: file
+  path: content.lt.json
+  format: json
+  fields:
+  - name: meta
+    label: Browser tab & Google listing
+    type: object
     fields:
+    - name: title
+      label: Homepage title
+      type: string
+      required: true
+      description: Browser tab, and the blue headline in Google results.
+    - name: description
+      label: Homepage search description
+      type: text
+      required: true
+      description: Grey summary under your link in Google. Aim for 150-160 characters.
+    - name: roles_title
+      label: Roles page title
+      type: string
+      required: true
+    - name: roles_description
+      label: Roles page search description
+      type: text
+      required: true
+    - name: thanks_title
+      label: Thank-you page title
+      type: string
+      required: true
+    - name: thanks_description
+      label: Thank-you page description
+      type: text
+      required: true
+  - name: brand
+    label: Agency name
+    type: object
+    fields:
+    - name: name_start
+      label: Name — first part
+      type: string
+      required: true
+      description: Shown in black in the logo.
+    - name: name_end
+      label: Name — second part
+      type: string
+      required: true
+      description: Shown in blue straight after. "North" + "bound" reads as "Northbound".
+  - name: nav
+    label: Menu
+    type: object
+    fields:
+    - name: employers
+      label: 'Menu: employers'
+      type: string
+      required: true
+    - name: process
+      label: 'Menu: how we work'
+      type: string
+      required: true
+    - name: roles
+      label: 'Menu: open roles'
+      type: string
+      required: true
+    - name: cta
+      label: Menu button
+      type: string
+      required: true
+    - name: menu_label
+      label: Mobile menu button label
+      type: string
+      required: true
+      description: Not shown on screen — read aloud by screen readers.
+  - name: hero
+    label: Top of the homepage
+    type: object
+    fields:
+    - name: heading
+      label: Headline
+      type: text
+      required: true
+    - name: heading_accent
+      label: Headline — blue ending
+      type: text
+      required: true
+      description: The last few words, shown in blue.
+    - name: intro
+      label: Intro paragraph
+      type: text
+      required: true
+    - name: cta_primary
+      label: Main button
+      type: string
+      required: true
+    - name: cta_secondary
+      label: Second button
+      type: string
+      required: true
+    - name: stats
+      label: Headline numbers
+      type: object
+      list: true
+      description: PLEASE READ — these came with the design and are NOT real figures for your agency.
+        Replace them with numbers you can stand behind, or delete all three.
+      fields:
+      - name: value
+        label: Number
+        type: string
+        required: true
+      - name: label
+        label: What it means
+        type: string
+        required: true
+    - name: card
+      label: Sample job card
+      type: object
+      description: The decorative card at the top right. Illustration only — not a real posting, and it
+        does not appear in Open roles.
+      fields:
       - name: title
         label: Job title
         type: string
         required: true
-        description: The role as a candidate would recognise it, e.g. "Senior Accountant".
-
-      - name: team
-        label: Company
+      - name: badge
+        label: Corner label
         type: string
         required: true
-        description: Shown in small grey text under the title. Keep client names anonymous unless they have agreed — e.g. "Manufacturing group · 400 employees".
-
-      - name: category
-        label: Category
-        type: select
+      - name: firm
+        label: Company line
+        type: string
         required: true
-        default: Operations
-        description: Decides which filter button the role appears under on the site.
-        options:
-          values:
-            - Finance
-            - Operations
-            - Sales
-            - HR
-            - IT
-            - Marketing
-            - Engineering
-            - Logistics
-            - Customer Service
-            - Legal
-            - Management
-
-      - name: location
-        label: Work location
-        type: select
-        required: true
-        default: On-site
-        options:
-          values: [On-site, Hybrid, Remote]
-
-      - name: type
-        label: Contract type
-        type: select
-        required: true
-        default: Full-time
-        options:
-          values: [Full-time, Part-time, Contract, Temporary, Internship]
-
+      - name: tags
+        label: Tags
+        type: string
+        list: true
       - name: salary
         label: Salary
         type: string
         required: true
-        description: Shown exactly as you type it, e.g. "€3,200–3,800 gross/mo" or "€2,800–3,400 + bonus".
-
-      - name: experience
-        label: Experience needed
+      - name: salary_note
+        label: Salary note
         type: string
-        description: Optional. e.g. "5+ years".
-
-      - name: level
-        label: Seniority
+        required: true
+      - name: cta
+        label: Link text
         type: string
-        description: Optional. e.g. "Senior", "Mid-level", "Junior–Mid".
-
-      - name: link
-        label: Apply link
-        type: string
-        default: "#contact"
-        description: Leave as #contact to send applicants to the contact form. Or paste a full web address or mailto: address.
-
-  - name: pagetext
-    label: Website text
-    type: file
-    path: content.json
-    format: json
+        required: true
+  - name: promises
+    label: 'Section: employers / candidates'
+    type: object
     fields:
-      - name: meta
-        label: Browser tab & Google listing
-        type: object
-        fields:
-          - name: title
-            label: Page title
-            type: string
-            required: true
-            description: Shown in the browser tab and as the blue headline in Google results.
-          - name: description
-            label: Search description
-            type: text
-            required: true
-            description: The grey summary under your link in Google. Aim for 150–160 characters.
-          - name: site_url
-            label: Site address
-            type: string
-            required: true
-            description: Full address of the live site, ending in a slash. Only change this if you move the site to a different domain.
-
-      - name: brand
-        label: Agency name
-        type: object
-        fields:
-          - name: name_start
-            label: Name — first part
-            type: string
-            required: true
-            description: Shown in black in the top-left logo.
-          - name: name_end
-            label: Name — second part
-            type: string
-            required: true
-            description: Shown in blue, straight after the first part. "North" + "bound" reads as "Northbound".
-
-      - name: hero
-        label: Top of the page
-        type: object
-        fields:
-          - name: heading
-            label: Headline
-            type: text
-            required: true
-          - name: heading_accent
-            label: Headline — blue ending
-            type: string
-            required: true
-            description: The last few words, shown in blue.
-          - name: intro
-            label: Intro paragraph
-            type: text
-            required: true
-          - name: cta_primary
-            label: Main button
-            type: string
-            required: true
-          - name: cta_secondary
-            label: Second button
-            type: string
-            required: true
-          - name: stats
-            label: Headline numbers
-            type: object
-            list: true
-            description: PLEASE READ — these came with the design and are not real figures for your agency. Replace them with numbers you can stand behind, or delete all three.
-            fields:
-              - name: value
-                label: Number
-                type: string
-                required: true
-              - name: label
-                label: What it means
-                type: string
-                required: true
-          - name: card
-            label: Sample job card
-            type: object
-            description: The decorative job card floating at the top right. It is illustration only — it is not a real posting and does not appear in Open roles.
-            fields:
-              - name: title
-                label: Job title
-                type: string
-                required: true
-              - name: badge
-                label: Corner label
-                type: string
-                required: true
-              - name: firm
-                label: Company line
-                type: string
-                required: true
-              - name: tags
-                label: Tags
-                type: string
-                list: true
-              - name: salary
-                label: Salary
-                type: string
-                required: true
-              - name: salary_note
-                label: Salary note
-                type: string
-                required: true
-              - name: cta
-                label: Link text
-                type: string
-                required: true
-
-      - name: promises
-        label: "Section: For employers / For candidates"
-        type: object
-        fields:
-          - name: heading
-            label: Section heading
-            type: string
-            required: true
-          - name: intro
-            label: Section intro
-            type: text
-            required: true
-          - name: employers
-            label: Employers column
-            type: object
-            fields:
-              - name: heading
-                label: Column heading
-                type: string
-                required: true
-              - name: intro
-                label: Opening line
-                type: text
-                required: true
-              - name: points
-                label: Bullet points
-                type: string
-                list: true
-              - name: cta
-                label: Button text
-                type: string
-                required: true
-          - name: candidates
-            label: Candidates column
-            type: object
-            fields:
-              - name: heading
-                label: Column heading
-                type: string
-                required: true
-              - name: intro
-                label: Opening line
-                type: text
-                required: true
-              - name: points
-                label: Bullet points
-                type: string
-                list: true
-              - name: cta
-                label: Button text
-                type: string
-                required: true
-
-      - name: process
-        label: "Section: How we work"
-        type: object
-        fields:
-          - name: heading
-            label: Section heading
-            type: string
-            required: true
-          - name: intro
-            label: Section intro
-            type: text
-            required: true
-          - name: steps
-            label: Steps
-            type: object
-            list: true
-            description: Shown side by side. Four fits the layout best.
-            fields:
-              - name: heading
-                label: Step name
-                type: string
-                required: true
-              - name: body
-                label: Step description
-                type: text
-                required: true
-
+    - name: heading
+      label: Section heading
+      type: string
+      required: true
+    - name: intro
+      label: Section intro
+      type: text
+      required: true
+    - name: employers
+      label: Employers column
+      type: object
+      fields:
+      - name: heading
+        label: Column heading
+        type: string
+        required: true
+      - name: intro
+        label: Opening line
+        type: text
+        required: true
+      - name: points
+        label: Bullet points
+        type: string
+        list: true
+      - name: cta
+        label: Button text
+        type: string
+        required: true
+    - name: candidates
+      label: Candidates column
+      type: object
+      fields:
+      - name: heading
+        label: Column heading
+        type: string
+        required: true
+      - name: intro
+        label: Opening line
+        type: text
+        required: true
+      - name: points
+        label: Bullet points
+        type: string
+        list: true
+      - name: cta
+        label: Button text
+        type: string
+        required: true
+  - name: process
+    label: 'Section: how we work'
+    type: object
+    fields:
+    - name: heading
+      label: Section heading
+      type: string
+      required: true
+    - name: intro
+      label: Section intro
+      type: text
+      required: true
+    - name: steps
+      label: Steps
+      type: object
+      list: true
+      description: Shown side by side. Four fits the layout best.
+      fields:
+      - name: heading
+        label: Step name
+        type: string
+        required: true
+      - name: body
+        label: Step description
+        type: text
+        required: true
+  - name: roles
+    label: 'Section: open roles'
+    type: object
+    description: Wording only. The roles themselves live under "Job postings".
+    fields:
+    - name: heading
+      label: Homepage section heading
+      type: string
+      required: true
+    - name: intro
+      label: Homepage section intro
+      type: text
+      required: true
+    - name: show_all
+      label: Show-all-roles button
+      type: string
+      required: true
+      description: The button under the homepage list that opens the full roles page.
+    - name: page_heading
+      label: Roles page heading
+      type: string
+      required: true
+    - name: page_intro
+      label: Roles page intro
+      type: text
+      required: true
+    - name: filter_all
+      label: 'Filter button: everything'
+      type: string
+      required: true
+      description: The first filter button on the roles page, e.g. "All".
+    - name: filter_label
+      label: Filter group label
+      type: string
+      required: true
+      description: Not shown on screen — read aloud by screen readers.
+    - name: apply_label
+      label: Apply button
+      type: string
+      required: true
+    - name: empty_message
+      label: Message when nothing matches
+      type: text
+      required: true
+    - name: error_message
+      label: Message if the list fails to load
+      type: text
+      required: true
+    - name: note_before
+      label: Closing note — before the link
+      type: string
+      required: true
+    - name: note_link
+      label: Closing note — link text
+      type: string
+      required: true
+    - name: note_after
+      label: Closing note — after the link
+      type: string
+      required: true
+  - name: testimonials
+    label: 'Section: client quotes'
+    type: object
+    fields:
+    - name: heading
+      label: Section heading
+      type: string
+      required: true
+    - name: items
+      label: Quotes
+      type: object
+      list: true
+      description: PLEASE READ — the quotes here came with the design and are NOT from real clients. Replace
+        them with real ones (with permission) or delete both.
+      fields:
+      - name: quote
+        label: What they said
+        type: text
+        required: true
+      - name: author
+        label: Their job title
+        type: string
+        required: true
+      - name: company
+        label: Their company
+        type: string
+        required: true
+  - name: faq
+    label: 'Section: questions'
+    type: object
+    fields:
+    - name: heading
+      label: Section heading
+      type: string
+      required: true
+    - name: items
+      label: Questions
+      type: object
+      list: true
+      fields:
+      - name: question
+        label: Question
+        type: string
+        required: true
+      - name: answer
+        label: Answer
+        type: text
+        required: true
+  - name: contact
+    label: 'Section: contact'
+    type: object
+    description: Your email, phone and address are shared by both languages — they live under Site settings.
+    fields:
+    - name: heading
+      label: Section heading
+      type: string
+      required: true
+    - name: intro
+      label: Section intro
+      type: text
+      required: true
+    - name: submit_label
+      label: Send button
+      type: string
+      required: true
+    - name: form_note
+      label: Note under the form
+      type: text
+      required: true
+    - name: form_subject
+      label: Subject line of enquiry emails
+      type: string
+      required: true
+      description: What you see in your inbox when someone writes from this version of the site.
+    - name: fallback_note
+      label: Text shown while the form is switched off
+      type: text
+      required: true
+    - name: fallback_cta
+      label: Button shown while the form is switched off
+      type: string
+      required: true
+    - name: labels
+      label: Form field labels
+      type: object
+      fields:
+      - name: name
+        label: Name field
+        type: string
+        required: true
+      - name: email
+        label: Email field
+        type: string
+        required: true
+      - name: phone
+        label: Phone label
+        type: string
+        required: true
+      - name: office
+        label: Office label
+        type: string
+        required: true
+      - name: type
+        label: '"I am..." field'
+        type: string
+        required: true
+      - name: type_employer
+        label: 'Option: employer'
+        type: string
+        required: true
+      - name: type_candidate
+        label: 'Option: candidate'
+        type: string
+        required: true
+      - name: message
+        label: Message field
+        type: string
+        required: true
+      - name: message_placeholder
+        label: Message example text
+        type: text
+        required: true
+  - name: footer
+    label: Footer
+    type: object
+    fields:
+    - name: copyright
+      label: Copyright line
+      type: string
+      required: true
+    - name: links
+      label: Footer links
+      type: object
+      fields:
+      - name: employers
+        label: 'Link: employers'
+        type: string
+        required: true
       - name: roles
-        label: "Section: Open roles"
-        type: object
-        description: Headings only. The roles themselves are under "Job postings".
-        fields:
-          - name: heading
-            label: Section heading
-            type: string
-            required: true
-          - name: intro
-            label: Section intro
-            type: text
-            required: true
-          - name: empty_message
-            label: Message when a category is empty
-            type: text
-            required: true
-          - name: note_before
-            label: Closing note — before the link
-            type: string
-            required: true
-          - name: note_link
-            label: Closing note — link text
-            type: string
-            required: true
-          - name: note_after
-            label: Closing note — after the link
-            type: string
-            required: true
-
-      - name: testimonials
-        label: "Section: Client quotes"
-        type: object
-        fields:
-          - name: heading
-            label: Section heading
-            type: string
-            required: true
-          - name: items
-            label: Quotes
-            type: object
-            list: true
-            description: PLEASE READ — the two quotes here came with the design and are not from real clients. Replace them with real ones (with permission) or delete both.
-            fields:
-              - name: quote
-                label: What they said
-                type: text
-                required: true
-              - name: author
-                label: Their job title
-                type: string
-                required: true
-              - name: company
-                label: Their company
-                type: string
-                required: true
-
-      - name: faq
-        label: "Section: Questions"
-        type: object
-        fields:
-          - name: heading
-            label: Section heading
-            type: string
-            required: true
-          - name: items
-            label: Questions
-            type: object
-            list: true
-            fields:
-              - name: question
-                label: Question
-                type: string
-                required: true
-              - name: answer
-                label: Answer
-                type: text
-                required: true
-
+        label: 'Link: open roles'
+        type: string
+        required: true
       - name: contact
-        label: "Section: Contact"
-        type: object
-        fields:
-          - name: heading
-            label: Section heading
-            type: string
-            required: true
-          - name: intro
-            label: Section intro
-            type: text
-            required: true
-          - name: email
-            label: Your email address
-            type: string
-            required: true
-            description: Shown on the page and used for the Email us button.
-          - name: phone
-            label: Your phone number
-            type: string
-            required: true
-            description: How the number is displayed, spaces and all.
-          - name: phone_link
-            label: Phone number for dialling
-            type: string
-            required: true
-            description: The same number with no spaces, starting +370, so tapping it on a phone dials correctly.
-          - name: office
-            label: Office address
-            type: string
-            required: true
-          - name: formspree_id
-            label: Formspree form ID
-            type: string
-            description: Paste the code from your Formspree form address here (the part after /f/). Until this is filled in, the page shows an Email us button instead of the form.
-          - name: form_subject
-            label: Subject line of enquiry emails
-            type: string
-            required: true
-          - name: submit_label
-            label: Send button text
-            type: string
-            required: true
-          - name: form_note
-            label: Note under the form
-            type: text
-            required: true
-          - name: fallback_note
-            label: Text shown when the form is off
-            type: text
-            required: true
-          - name: fallback_cta
-            label: Button text when the form is off
-            type: string
-            required: true
-
-      - name: footer
-        label: Footer
-        type: object
-        fields:
-          - name: copyright
-            label: Copyright line
-            type: string
-            required: true
+        label: 'Link: contact'
+        type: string
+        required: true
+  - name: thanks
+    label: Thank-you page
+    type: object
+    description: Shown after someone sends the contact form.
+    fields:
+    - name: heading
+      label: Heading
+      type: string
+      required: true
+    - name: body
+      label: Message
+      type: text
+      required: true
+    - name: cta
+      label: Button back to the site
+      type: string
+      required: true
+- name: text_en
+  label: Website text — English
+  type: file
+  path: content.en.json
+  format: json
+  fields:
+  - name: meta
+    label: Browser tab & Google listing
+    type: object
+    fields:
+    - name: title
+      label: Homepage title
+      type: string
+      required: true
+      description: Browser tab, and the blue headline in Google results.
+    - name: description
+      label: Homepage search description
+      type: text
+      required: true
+      description: Grey summary under your link in Google. Aim for 150-160 characters.
+    - name: roles_title
+      label: Roles page title
+      type: string
+      required: true
+    - name: roles_description
+      label: Roles page search description
+      type: text
+      required: true
+    - name: thanks_title
+      label: Thank-you page title
+      type: string
+      required: true
+    - name: thanks_description
+      label: Thank-you page description
+      type: text
+      required: true
+  - name: brand
+    label: Agency name
+    type: object
+    fields:
+    - name: name_start
+      label: Name — first part
+      type: string
+      required: true
+      description: Shown in black in the logo.
+    - name: name_end
+      label: Name — second part
+      type: string
+      required: true
+      description: Shown in blue straight after. "North" + "bound" reads as "Northbound".
+  - name: nav
+    label: Menu
+    type: object
+    fields:
+    - name: employers
+      label: 'Menu: employers'
+      type: string
+      required: true
+    - name: process
+      label: 'Menu: how we work'
+      type: string
+      required: true
+    - name: roles
+      label: 'Menu: open roles'
+      type: string
+      required: true
+    - name: cta
+      label: Menu button
+      type: string
+      required: true
+    - name: menu_label
+      label: Mobile menu button label
+      type: string
+      required: true
+      description: Not shown on screen — read aloud by screen readers.
+  - name: hero
+    label: Top of the homepage
+    type: object
+    fields:
+    - name: heading
+      label: Headline
+      type: text
+      required: true
+    - name: heading_accent
+      label: Headline — blue ending
+      type: text
+      required: true
+      description: The last few words, shown in blue.
+    - name: intro
+      label: Intro paragraph
+      type: text
+      required: true
+    - name: cta_primary
+      label: Main button
+      type: string
+      required: true
+    - name: cta_secondary
+      label: Second button
+      type: string
+      required: true
+    - name: stats
+      label: Headline numbers
+      type: object
+      list: true
+      description: PLEASE READ — these came with the design and are NOT real figures for your agency.
+        Replace them with numbers you can stand behind, or delete all three.
+      fields:
+      - name: value
+        label: Number
+        type: string
+        required: true
+      - name: label
+        label: What it means
+        type: string
+        required: true
+    - name: card
+      label: Sample job card
+      type: object
+      description: The decorative card at the top right. Illustration only — not a real posting, and it
+        does not appear in Open roles.
+      fields:
+      - name: title
+        label: Job title
+        type: string
+        required: true
+      - name: badge
+        label: Corner label
+        type: string
+        required: true
+      - name: firm
+        label: Company line
+        type: string
+        required: true
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: salary
+        label: Salary
+        type: string
+        required: true
+      - name: salary_note
+        label: Salary note
+        type: string
+        required: true
+      - name: cta
+        label: Link text
+        type: string
+        required: true
+  - name: promises
+    label: 'Section: employers / candidates'
+    type: object
+    fields:
+    - name: heading
+      label: Section heading
+      type: string
+      required: true
+    - name: intro
+      label: Section intro
+      type: text
+      required: true
+    - name: employers
+      label: Employers column
+      type: object
+      fields:
+      - name: heading
+        label: Column heading
+        type: string
+        required: true
+      - name: intro
+        label: Opening line
+        type: text
+        required: true
+      - name: points
+        label: Bullet points
+        type: string
+        list: true
+      - name: cta
+        label: Button text
+        type: string
+        required: true
+    - name: candidates
+      label: Candidates column
+      type: object
+      fields:
+      - name: heading
+        label: Column heading
+        type: string
+        required: true
+      - name: intro
+        label: Opening line
+        type: text
+        required: true
+      - name: points
+        label: Bullet points
+        type: string
+        list: true
+      - name: cta
+        label: Button text
+        type: string
+        required: true
+  - name: process
+    label: 'Section: how we work'
+    type: object
+    fields:
+    - name: heading
+      label: Section heading
+      type: string
+      required: true
+    - name: intro
+      label: Section intro
+      type: text
+      required: true
+    - name: steps
+      label: Steps
+      type: object
+      list: true
+      description: Shown side by side. Four fits the layout best.
+      fields:
+      - name: heading
+        label: Step name
+        type: string
+        required: true
+      - name: body
+        label: Step description
+        type: text
+        required: true
+  - name: roles
+    label: 'Section: open roles'
+    type: object
+    description: Wording only. The roles themselves live under "Job postings".
+    fields:
+    - name: heading
+      label: Homepage section heading
+      type: string
+      required: true
+    - name: intro
+      label: Homepage section intro
+      type: text
+      required: true
+    - name: show_all
+      label: Show-all-roles button
+      type: string
+      required: true
+      description: The button under the homepage list that opens the full roles page.
+    - name: page_heading
+      label: Roles page heading
+      type: string
+      required: true
+    - name: page_intro
+      label: Roles page intro
+      type: text
+      required: true
+    - name: filter_all
+      label: 'Filter button: everything'
+      type: string
+      required: true
+      description: The first filter button on the roles page, e.g. "All".
+    - name: filter_label
+      label: Filter group label
+      type: string
+      required: true
+      description: Not shown on screen — read aloud by screen readers.
+    - name: apply_label
+      label: Apply button
+      type: string
+      required: true
+    - name: empty_message
+      label: Message when nothing matches
+      type: text
+      required: true
+    - name: error_message
+      label: Message if the list fails to load
+      type: text
+      required: true
+    - name: note_before
+      label: Closing note — before the link
+      type: string
+      required: true
+    - name: note_link
+      label: Closing note — link text
+      type: string
+      required: true
+    - name: note_after
+      label: Closing note — after the link
+      type: string
+      required: true
+  - name: testimonials
+    label: 'Section: client quotes'
+    type: object
+    fields:
+    - name: heading
+      label: Section heading
+      type: string
+      required: true
+    - name: items
+      label: Quotes
+      type: object
+      list: true
+      description: PLEASE READ — the quotes here came with the design and are NOT from real clients. Replace
+        them with real ones (with permission) or delete both.
+      fields:
+      - name: quote
+        label: What they said
+        type: text
+        required: true
+      - name: author
+        label: Their job title
+        type: string
+        required: true
+      - name: company
+        label: Their company
+        type: string
+        required: true
+  - name: faq
+    label: 'Section: questions'
+    type: object
+    fields:
+    - name: heading
+      label: Section heading
+      type: string
+      required: true
+    - name: items
+      label: Questions
+      type: object
+      list: true
+      fields:
+      - name: question
+        label: Question
+        type: string
+        required: true
+      - name: answer
+        label: Answer
+        type: text
+        required: true
+  - name: contact
+    label: 'Section: contact'
+    type: object
+    description: Your email, phone and address are shared by both languages — they live under Site settings.
+    fields:
+    - name: heading
+      label: Section heading
+      type: string
+      required: true
+    - name: intro
+      label: Section intro
+      type: text
+      required: true
+    - name: submit_label
+      label: Send button
+      type: string
+      required: true
+    - name: form_note
+      label: Note under the form
+      type: text
+      required: true
+    - name: form_subject
+      label: Subject line of enquiry emails
+      type: string
+      required: true
+      description: What you see in your inbox when someone writes from this version of the site.
+    - name: fallback_note
+      label: Text shown while the form is switched off
+      type: text
+      required: true
+    - name: fallback_cta
+      label: Button shown while the form is switched off
+      type: string
+      required: true
+    - name: labels
+      label: Form field labels
+      type: object
+      fields:
+      - name: name
+        label: Name field
+        type: string
+        required: true
+      - name: email
+        label: Email field
+        type: string
+        required: true
+      - name: phone
+        label: Phone label
+        type: string
+        required: true
+      - name: office
+        label: Office label
+        type: string
+        required: true
+      - name: type
+        label: '"I am..." field'
+        type: string
+        required: true
+      - name: type_employer
+        label: 'Option: employer'
+        type: string
+        required: true
+      - name: type_candidate
+        label: 'Option: candidate'
+        type: string
+        required: true
+      - name: message
+        label: Message field
+        type: string
+        required: true
+      - name: message_placeholder
+        label: Message example text
+        type: text
+        required: true
+  - name: footer
+    label: Footer
+    type: object
+    fields:
+    - name: copyright
+      label: Copyright line
+      type: string
+      required: true
+    - name: links
+      label: Footer links
+      type: object
+      fields:
+      - name: employers
+        label: 'Link: employers'
+        type: string
+        required: true
+      - name: roles
+        label: 'Link: open roles'
+        type: string
+        required: true
+      - name: contact
+        label: 'Link: contact'
+        type: string
+        required: true
+  - name: thanks
+    label: Thank-you page
+    type: object
+    description: Shown after someone sends the contact form.
+    fields:
+    - name: heading
+      label: Heading
+      type: string
+      required: true
+    - name: body
+      label: Message
+      type: text
+      required: true
+    - name: cta
+      label: Button back to the site
+      type: string
+      required: true
+- name: settings
+  label: Site settings
+  type: file
+  path: site.json
+  format: json
+  fields:
+  - name: url
+    label: Site address
+    type: string
+    required: true
+    description: Full address of the live site, ending in a slash. Only change this if you move to a different
+      domain.
+  - name: formspree_id
+    label: Formspree form ID
+    type: string
+    description: Paste the code from your Formspree form address (the part after /f/). Until this is filled
+      in, both sites show an Email us button instead of the contact form.
+  - name: email
+    label: Your email address
+    type: string
+    required: true
+    description: Shown on both language versions and used for the Email us button.
+  - name: phone
+    label: Your phone number
+    type: string
+    required: true
+    description: How it is displayed, spaces and all.
+  - name: phone_link
+    label: Phone number for dialling
+    type: string
+    required: true
+    description: Same number with no spaces, starting +370, so tapping it on a phone dials correctly.
+  - name: office
+    label: Office address
+    type: string
+    required: true

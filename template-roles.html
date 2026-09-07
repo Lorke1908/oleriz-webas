@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{paths.lang}}">
+<head>
+{{> partials/head.html }}
+</head>
+<body>
+
+{{> partials/header.html }}
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{{roles.page_heading}}</h2>
+      <p>{{roles.page_intro}}</p>
+    </div>
+
+    <div class="roles-toolbar" id="filters" role="group" aria-label="{{roles.filter_label}}"></div>
+    <div id="jobList"></div>
+    <div class="roles-empty" id="rolesEmpty" hidden>{{roles.empty_message}}</div>
+
+    <p class="roles-note">{{roles.note_before}} <a href="{{paths.home}}#contact">{{roles.note_link}}</a> {{roles.note_after}}</p>
+  </div>
+</section>
+
+{{> partials/footer.html }}
+
+<script>
+window.SITE = {
+  jobsUrl: "{{paths.jobs}}",
+  limit: 0,
+  filters: true,
+  strings: {
+    all: "{{roles.filter_all}}",
+    empty: "{{roles.empty_message}}",
+    error: "{{roles.error_message}}",
+    apply: "{{roles.apply_label}}"
+  }
+};
+</script>
+<script src="{{paths.site_js}}"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "Northbound — personalo atranka, kuri tinka",
+    "description": "Northbound — personalo atrankos agentūra, įdarbinanti patikrintus specialistus pozicijose, kuriose jie lieka. Peržiūrėkite skelbimus arba ieškokite darbuotojo su mumis.",
+    "roles_title": "Darbo skelbimai — Northbound",
+    "roles_description": "Visos pozicijos, kurioms šiuo metu ieškome žmonių, su tikrais atlyginimo rėžiais. Filtruokite pagal sritį ir kandidatuokite tiesiogiai.",
+    "thanks_title": "Žinutė išsiųsta — Northbound",
+    "thanks_description": "Ačiū, kad parašėte."
+  },
+  "brand": {
+    "name_start": "North",
+    "name_end": "bound"
+  },
+  "nav": {
+    "employers": "Darbdaviams",
+    "process": "Kaip dirbame",
+    "roles": "Darbo skelbimai",
+    "cta": "Ieškoti darbuotojo",
+    "menu_label": "Atidaryti meniu"
+  },
+  "hero": {
+    "heading": "Tinkamas žmogus tinkamoje vietoje,",
+    "heading_accent": "ir kitąmet vis dar su jumis.",
+    "intro": "Northbound — personalo atrankos agentūra įmonėms, pavargusioms nuo lėtų atrankų ir netinkamų kandidatų. Su kiekvienu kandidatu susitinkame anksčiau nei jūs, todėl kalbatės tik su tais, kurie verti jūsų laiko.",
+    "cta_primary": "Ieškoti darbuotojo",
+    "cta_secondary": "Peržiūrėti skelbimus",
+    "stats": [
+      {
+        "value": "230+",
+        "label": "įdarbintų specialistų"
+      },
+      {
+        "value": "14 d.",
+        "label": "vidutiniškai iki kandidatų sąrašo"
+      },
+      {
+        "value": "92 %",
+        "label": "po metų vis dar dirba"
+      }
+    ],
+    "card": {
+      "title": "Vyresnysis buhalteris",
+      "badge": "Nauja šią savaitę",
+      "firm": "Gamybos įmonių grupė · 400 darbuotojų",
+      "tags": [
+        "Visa darbo diena",
+        "Hibridinis",
+        "Finansai"
+      ],
+      "salary": "3 200–3 800 €",
+      "salary_note": "bruto / mėn.",
+      "cta": "Žiūrėti skelbimą"
+    }
+  },
+  "promises": {
+    "heading": "Viena agentūra, du pažadai",
+    "intro": "Gera atranka veikia į abi puses. Įmonės gauna žmones, kurie lieka; kandidatai — darbą, kurio iš tikrųjų nori.",
+    "employers": {
+      "heading": "Darbdaviams",
+      "intro": "Nustokite naršyti šimtą gyvenimo aprašymų, kad rastumėte tris vertus skambučio.",
+      "points": [
+        "Su kiekvienu kandidatu pasikalbame ir patikriname rekomendacijas dar prieš jums jį pamatant",
+        "3–5 žmonių sąrašas, o ne krūva paraiškų",
+        "Atlyginimų palyginimas rinkoje, kad pasiūlymas pataikytų iš pirmo karto",
+        "Pakeitimo garantija, jei įdarbinimas nepasiteisintų"
+      ],
+      "cta": "Pradėti paiešką"
+    },
+    "candidates": {
+      "heading": "Kandidatams",
+      "intro": "Jokio dingimo be žinios, jokių paslaptingų pozicijų, jokių CV, išsiųstų be jūsų sutikimo.",
+      "points": [
+        "Tikri atlyginimo rėžiai kiekviename skelbime",
+        "Sąžiningas grįžtamasis ryšys po kiekvieno pokalbio, per 48 valandas",
+        "Jūsų CV niekada nesiunčiamas be aiškaus jūsų sutikimo",
+        "Nemokama — kandidatai mums nemoka nieko"
+      ],
+      "cta": "Peržiūrėti skelbimus"
+    }
+  },
+  "process": {
+    "heading": "Nuo užduoties iki pasirašyto pasiūlymo per keturis žingsnius",
+    "intro": "Užsitęsusi paieška kainuoja brangiau nei bet koks atlygis. Štai kaip neleidžiame jai sustoti.",
+    "steps": [
+      {
+        "heading": "Pokalbis dėl poreikio",
+        "body": "45 minutės apie poziciją, komandą ir tai, ką jums reiškia „puikus“ kandidatas — ne vien apie pareigybės aprašymą."
+      },
+      {
+        "heading": "Paieška ir atranka",
+        "body": "Kreipiamės į žmones tiesiogiai, kalbamės su kiekvienu kandidatu, o rekomendacijas tikriname iš karto, ne paskutinę minutę."
+      },
+      {
+        "heading": "Kandidatų sąrašas",
+        "body": "3–5 patikrinti kandidatai per dvi savaites, kiekvienas su mūsų vertinimu raštu ir atlyginimo lūkesčiais."
+      },
+      {
+        "heading": "Pasiūlymas ir įsiliejimas",
+        "body": "Pasirūpiname derybomis ir palaikome ryšį pirmąsias 90 dienų, kad viskas prigytų."
+      }
+    ]
+  },
+  "roles": {
+    "heading": "Darbo skelbimai",
+    "intro": "Kiekviename skelbime nurodomas tikras atlyginimo rėžis. Kandidatuokite tiesiogiai arba atsiųskite atvirą paraišką, jei kol kas niekas netinka.",
+    "empty_message": "Šioje srityje šiuo metu atvirų pozicijų nėra — užsukite vėliau arba atsiųskite atvirą paraišką.",
+    "note_before": "Nieko tinkamo?",
+    "note_link": "Atsiųskite atvirą paraišką",
+    "note_after": "ir susisieksime, kai atsiras tinkama pozicija.",
+    "show_all": "Visi darbo skelbimai",
+    "filter_all": "Visos",
+    "filter_label": "Filtruoti skelbimus pagal sritį",
+    "apply_label": "Kandidatuoti",
+    "error_message": "Skelbimų įkelti nepavyko. Parašykite mums ir atsiųsime dabartinį sąrašą.",
+    "page_heading": "Darbo skelbimai",
+    "page_intro": "Visos pozicijos, kurioms šiuo metu ieškome žmonių. Kiekviename skelbime — tikras atlyginimo rėžis."
+  },
+  "testimonials": {
+    "heading": "Ką klientai sako, kai vieta užpildyta",
+    "items": [
+      {
+        "quote": "„Logistikos vadovo ieškojome penkis mėnesius. Northbound per tris savaites turėjo pasirašytą pasiūlymą — ir ji vis dar dirba su mumis, jau dvejus metus.“",
+        "author": "Operacijų vadovė",
+        "company": "Logistikos įmonė, 250 darbuotojų"
+      },
+      {
+        "quote": "„Kandidatų sąraše buvo trys žmonės. Būtume mielai priėmę visus tris. Su agentūra mums taip dar nėra nutikę.“",
+        "author": "Generalinis direktorius",
+        "company": "Inžinerijos įmonė, 80 darbuotojų"
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Klausimai, kuriuos išgirstame prieš kiekvieną paiešką",
+    "items": [
+      {
+        "question": "Kiek kainuoja paieška ir kada mokame?",
+        "answer": "Mūsų atlygis — dalis įdarbinto kandidato pirmųjų metų atlyginimo; sąskaitą išrašome tik tada, kai jis pasirašo sutartį. Jokių išankstinių mokesčių ir jokio mokesčio, jei pozicijos neužpildome."
+      },
+      {
+        "question": "Kada pamatysime kandidatus?",
+        "answer": "Daugumai pozicijų 3–5 pakalbintų ir rekomendacijomis patikrintų kandidatų sąrašą gausite per dvi savaites nuo pirmojo pokalbio. Siauresnės srities ar vadovų paieškos gali trukti ilgiau — apie tai pasakome sąžiningai iš karto."
+      },
+      {
+        "question": "O jei įdarbinimas nepasiteisins?",
+        "answer": "Kiekvienam įdarbinimui taikoma pakeitimo garantija: jei žmogus išeina garantiniu laikotarpiu, paiešką pakartojame be papildomo mokesčio."
+      },
+      {
+        "question": "Ar kandidatai moka?",
+        "answer": "Niekada. Kandidatams mūsų paslaugos visiškai nemokamos — atlygį moka įdarbinanti įmonė."
+      },
+      {
+        "question": "Ar paieška konfidenciali?",
+        "answer": "Taip, iš abiejų pusių. Galime vykdyti visiškai konfidencialias paieškas jautriems pakeitimams ir niekada nedaliname kandidato CV be aiškaus jo sutikimo."
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Papasakokite, ko ieškote",
+    "intro": "Aprašykite poziciją keliais sakiniais — per vieną darbo dieną atsakysime ir sąžiningai pasakysime apie terminus, atlyginimo rėžį ir tai, ar esame tinkama agentūra šiai paieškai.",
+    "submit_label": "Siųsti žinutę",
+    "form_note": "Atsakome per vieną darbo dieną. Jūsų duomenimis niekada nesidaliname.",
+    "form_subject": "Nauja užklausa iš svetainės (LT)",
+    "fallback_note": "Kontaktinė forma dar neįjungta. Parašykite mums el. paštu — atsakysime per vieną darbo dieną.",
+    "fallback_cta": "Rašyti mums",
+    "labels": {
+      "name": "Vardas",
+      "email": "El. paštas",
+      "phone": "Telefonas",
+      "office": "Biuras",
+      "type": "Aš esu…",
+      "type_employer": "Darbdavys, ieškantis darbuotojo",
+      "type_candidate": "Kandidatas, ieškantis darbo",
+      "message": "Žinutė",
+      "message_placeholder": "pvz. Ieškome vyresniojo buhalterio, hibridinis darbas, pradžia per du mėnesius."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Northbound Recruitment. Visos teisės saugomos.",
+    "links": {
+      "employers": "Darbdaviams",
+      "roles": "Darbo skelbimai",
+      "contact": "Kontaktai"
+    }
+  },
+  "thanks": {
+    "heading": "Žinutė gauta",
+    "body": "Ačiū, kad parašėte. Į kiekvieną žinutę atsakome per vieną darbo dieną.",
+    "cta": "Grįžti į svetainę"
+  }
+}
