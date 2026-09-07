@@ -19,7 +19,10 @@
       </div>
       <div class="hero-meta">
 {{#hero.stats}}
-        <div><strong>{{value}}</strong>{{label}}</div>
+        <div>
+          <span class="stat-icon stat-icon--{{icon}}" aria-hidden="true"></span>
+          <strong>{{value}}</strong>{{label}}
+        </div>
 {{/hero.stats}}
       </div>
     </div>
@@ -28,19 +31,25 @@
       <div class="job-card behind behind-2"></div>
       <div class="job-card behind"></div>
       <div class="job-card featured">
-        <div class="jc-top">
-          <div class="jc-title">{{hero.card.title}}</div>
-          <div class="jc-badge">{{hero.card.badge}}</div>
+        <div class="jc-head">
+          <span class="jc-logo stat-icon--briefcase"></span>
+          <div class="jc-headings">
+            <div class="jc-title">{{hero.card.title}}</div>
+            <div class="jc-firm">{{hero.card.firm}}</div>
+          </div>
+          <span class="jc-badge">{{hero.card.badge}}</span>
         </div>
-        <div class="jc-firm">{{hero.card.firm}}</div>
         <div class="jc-tags">
 {{#hero.card.tags}}
           <span>{{.}}</span>
 {{/hero.card.tags}}
         </div>
         <div class="jc-foot">
-          <div class="jc-salary">{{hero.card.salary}} <small>{{hero.card.salary_note}}</small></div>
-          <a class="jc-apply" href="{{paths.roles}}">{{hero.card.cta}}</a>
+          <div class="jc-salary">
+            <strong>{{hero.card.salary}}</strong>
+            <small>{{hero.card.salary_note}}</small>
+          </div>
+          <a class="jc-apply" href="{{paths.roles}}" tabindex="-1">{{hero.card.cta}}</a>
         </div>
       </div>
     </div>

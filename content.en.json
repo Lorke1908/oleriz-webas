@@ -29,14 +29,17 @@
     "cta_secondary": "Browse open roles",
     "stats": [
       {
+        "icon": "users",
         "value": "230+",
         "label": "placements made"
       },
       {
+        "icon": "clock",
         "value": "14 days",
         "label": "average to shortlist"
       },
       {
+        "icon": "shield",
         "value": "92%",
         "label": "still in role after a year"
       }
