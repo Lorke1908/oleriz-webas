@@ -167,7 +167,9 @@
       <p>{{contact.intro}}</p>
       <div class="contact-line"><span>{{contact.labels.email}}</span><a href="mailto:{{site.email}}">{{site.email}}</a></div>
       <div class="contact-line"><span>{{contact.labels.phone}}</span><a href="tel:{{site.phone_link}}">{{site.phone}}</a></div>
+{{#site.office}}
       <div class="contact-line"><span>{{contact.labels.office}}</span>{{site.office}}</div>
+{{/site.office}}
     </div>
 {{#site.formspree_id}}
     <form name="contact" method="POST" action="https://formspree.io/f/{{site.formspree_id}}">

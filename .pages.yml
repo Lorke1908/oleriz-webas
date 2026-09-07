@@ -1377,4 +1377,4 @@ content:
   - name: office
     label: Office address
     type: string
-    required: true
+    description: Leave empty if you do not have one and the line is hidden from the contact section.
