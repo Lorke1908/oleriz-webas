@@ -51,6 +51,9 @@
 <section class="wash" id="employers">
   <div class="wrap">
     <div class="section-head">
+      {{#promises.eyebrow}}
+        <span class="eyebrow">{{.}}</span>
+      {{/promises.eyebrow}}
       <h2>{{promises.heading}}</h2>
       <p>{{promises.intro}}</p>
     </div>
@@ -83,6 +86,9 @@
 <section id="process">
   <div class="wrap">
     <div class="section-head">
+      {{#process.eyebrow}}
+        <span class="eyebrow">{{.}}</span>
+      {{/process.eyebrow}}
       <h2>{{process.heading}}</h2>
       <p>{{process.intro}}</p>
     </div>
@@ -101,6 +107,9 @@
 <section class="wash" id="roles">
   <div class="wrap">
     <div class="section-head">
+      {{#roles.eyebrow}}
+        <span class="eyebrow">{{.}}</span>
+      {{/roles.eyebrow}}
       <h2>{{roles.heading}}</h2>
       <p>{{roles.intro}}</p>
     </div>
@@ -120,6 +129,9 @@
 <section>
   <div class="wrap">
     <div class="section-head">
+      {{#testimonials.eyebrow}}
+        <span class="eyebrow">{{.}}</span>
+      {{/testimonials.eyebrow}}
       <h2>{{testimonials.heading}}</h2>
     </div>
     <div class="t-grid">
@@ -137,6 +149,9 @@
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
+      {{#faq.eyebrow}}
+        <span class="eyebrow">{{.}}</span>
+      {{/faq.eyebrow}}
       <h2>{{faq.heading}}</h2>
     </div>
     <div class="faq-list">
@@ -154,6 +169,9 @@
 <section class="wash" id="contact">
   <div class="wrap contact-grid">
     <div class="contact-info">
+      {{#contact.eyebrow}}
+        <span class="eyebrow">{{.}}</span>
+      {{/contact.eyebrow}}
       <h2>{{contact.heading}}</h2>
       <p>{{contact.intro}}</p>
       <div class="contact-line"><span>{{contact.labels.email}}</span><a href="mailto:{{site.email}}">{{site.email}}</a></div>

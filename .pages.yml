@@ -317,6 +317,11 @@ content:
     label: 'Section: employers / candidates'
     type: object
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the section heading.
     - name: heading
       label: Section heading
       type: string
@@ -369,6 +374,11 @@ content:
     label: 'Section: how we work'
     type: object
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the section heading.
     - name: heading
       label: Section heading
       type: string
@@ -396,6 +406,11 @@ content:
     type: object
     description: Wording only. The roles themselves live under "Job postings".
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the homepage roles heading.
     - name: heading
       label: Homepage section heading
       type: string
@@ -409,6 +424,11 @@ content:
       type: string
       required: true
       description: The button under the homepage list that opens the full roles page.
+    - name: page_eyebrow
+      label: Roles page — small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the roles page heading.
     - name: page_heading
       label: Roles page heading
       type: string
@@ -455,6 +475,11 @@ content:
     label: 'Section: client quotes'
     type: object
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the section heading.
     - name: heading
       label: Section heading
       type: string
@@ -482,6 +507,11 @@ content:
     label: 'Section: questions'
     type: object
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the section heading.
     - name: heading
       label: Section heading
       type: string
@@ -504,6 +534,11 @@ content:
     type: object
     description: Your email, phone and address are shared by both languages — they live under Site settings.
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the section heading.
     - name: heading
       label: Section heading
       type: string
@@ -767,6 +802,11 @@ content:
     label: 'Section: employers / candidates'
     type: object
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the section heading.
     - name: heading
       label: Section heading
       type: string
@@ -819,6 +859,11 @@ content:
     label: 'Section: how we work'
     type: object
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the section heading.
     - name: heading
       label: Section heading
       type: string
@@ -846,6 +891,11 @@ content:
     type: object
     description: Wording only. The roles themselves live under "Job postings".
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the homepage roles heading.
     - name: heading
       label: Homepage section heading
       type: string
@@ -859,6 +909,11 @@ content:
       type: string
       required: true
       description: The button under the homepage list that opens the full roles page.
+    - name: page_eyebrow
+      label: Roles page — small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the roles page heading.
     - name: page_heading
       label: Roles page heading
       type: string
@@ -905,6 +960,11 @@ content:
     label: 'Section: client quotes'
     type: object
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the section heading.
     - name: heading
       label: Section heading
       type: string
@@ -932,6 +992,11 @@ content:
     label: 'Section: questions'
     type: object
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the section heading.
     - name: heading
       label: Section heading
       type: string
@@ -954,6 +1019,11 @@ content:
     type: object
     description: Your email, phone and address are shared by both languages — they live under Site settings.
     fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+      description: The short uppercase line shown in blue above the section heading.
     - name: heading
       label: Section heading
       type: string

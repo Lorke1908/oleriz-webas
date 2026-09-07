@@ -53,6 +53,7 @@
     }
   },
   "promises": {
+    "eyebrow": "Kodėl Northbound",
     "heading": "Viena agentūra, du pažadai",
     "intro": "Gera atranka veikia į abi puses. Įmonės gauna žmones, kurie lieka; kandidatai — darbą, kurio iš tikrųjų nori.",
     "employers": {
@@ -79,6 +80,7 @@
     }
   },
   "process": {
+    "eyebrow": "Kaip dirbame",
     "heading": "Nuo užduoties iki pasirašyto pasiūlymo per keturis žingsnius",
     "intro": "Užsitęsusi paieška kainuoja brangiau nei bet koks atlygis. Štai kaip neleidžiame jai sustoti.",
     "steps": [
@@ -101,6 +103,7 @@
     ]
   },
   "roles": {
+    "eyebrow": "Šiuo metu ieškome",
     "heading": "Darbo skelbimai",
     "intro": "Kiekviename skelbime nurodomas tikras atlyginimo rėžis. Kandidatuokite tiesiogiai arba atsiųskite atvirą paraišką, jei kol kas niekas netinka.",
     "empty_message": "Šioje srityje šiuo metu atvirų pozicijų nėra — užsukite vėliau arba atsiųskite atvirą paraišką.",
@@ -108,6 +111,7 @@
     "note_link": "Atsiųskite atvirą paraišką",
     "note_after": "ir susisieksime, kai atsiras tinkama pozicija.",
     "show_all": "Visi darbo skelbimai",
+    "page_eyebrow": "Atviros pozicijos",
     "filter_all": "Visos",
     "filter_label": "Filtruoti skelbimus pagal sritį",
     "apply_label": "Kandidatuoti",
@@ -116,6 +120,7 @@
     "page_intro": "Visos pozicijos, kurioms šiuo metu ieškome žmonių. Kiekviename skelbime — tikras atlyginimo rėžis."
   },
   "testimonials": {
+    "eyebrow": "Klientų atsiliepimai",
     "heading": "Ką klientai sako, kai vieta užpildyta",
     "items": [
       {
@@ -131,6 +136,7 @@
     ]
   },
   "faq": {
+    "eyebrow": "Dažni klausimai",
     "heading": "Klausimai, kuriuos išgirstame prieš kiekvieną paiešką",
     "items": [
       {
@@ -156,6 +162,7 @@
     ]
   },
   "contact": {
+    "eyebrow": "Susisiekime",
     "heading": "Papasakokite, ko ieškote",
     "intro": "Aprašykite poziciją keliais sakiniais — per vieną darbo dieną atsakysime ir sąžiningai pasakysime apie terminus, atlyginimo rėžį ir tai, ar esame tinkama agentūra šiai paieškai.",
     "submit_label": "Siųsti žinutę",

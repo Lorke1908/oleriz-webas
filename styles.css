@@ -19,6 +19,8 @@
   --accent:#2A5CE8;
   --accent-deep:#1B3FA8;
   --accent-wash:#EEF2FE;
+  --accent-tint:#F5F8FF;
+  --accent-glow:rgba(42,92,232,.42);
 
   /* surfaces */
   --paper:#FBFBFD;
@@ -37,19 +39,23 @@
   --s6:32px; --s7:48px;  --s8:64px; --s9:88px; --s10:120px;
 
   /* radii */
-  --r-sm:10px; --r:14px; --r-lg:22px; --r-pill:999px;
+  --r-sm:10px; --r:16px; --r-lg:26px; --r-pill:999px;
 
   --font:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  --shadow-card:0 1px 2px rgba(11,17,32,.04),0 12px 32px -12px rgba(11,17,32,.14);
+  --shadow-sm:0 1px 2px rgba(11,17,32,.04),0 4px 12px -6px rgba(11,17,32,.10);
+  --shadow-card:0 1px 2px rgba(11,17,32,.04),0 18px 44px -18px rgba(11,17,32,.18);
+  --shadow-lift:0 1px 2px rgba(11,17,32,.05),0 28px 60px -24px rgba(11,17,32,.26);
   --ring:0 0 0 3px rgba(42,92,232,.28);
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:104px}
+html{background:var(--paper)}
 body{
+  position:relative;
   font-family:var(--font);
-  background:var(--paper);
+  background:transparent;
   color:var(--ink);
   font-size:16.5px;
   line-height:1.62;
@@ -59,6 +65,16 @@ body{
 img{max-width:100%;display:block}
 a{color:inherit}
 ::selection{background:var(--accent);color:#fff}
+/* the blue wash the header and hero sit in */
+body::before{
+  content:"";position:absolute;z-index:-1;
+  top:0;left:0;right:0;height:820px;
+  background:
+    radial-gradient(1100px 520px at 12% -10%,rgba(42,92,232,.13),transparent 62%),
+    radial-gradient(900px 460px at 88% -6%,rgba(42,92,232,.08),transparent 58%),
+    linear-gradient(to bottom,rgba(42,92,232,.05),rgba(42,92,232,0) 70%);
+  pointer-events:none;
+}
 .wrap{max-width:1140px;margin:0 auto;padding:0 var(--s5)}
 
 /* Focus: visible, never on mouse click */
@@ -88,7 +104,13 @@ h2{
 h3{font-weight:700;font-size:20px;letter-spacing:-.012em;line-height:1.3}
 
 /* small uppercase label, used for eyebrows and field labels */
-.eyebrow,.contact-line span,.jr-sub,.form-row label,form label{
+.eyebrow{
+  display:block;
+  font-size:12.5px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);
+  margin-bottom:var(--s3);
+}
+.contact-line span,.jr-sub,.form-row label,form label{
   font-size:12px;
   font-weight:700;
   letter-spacing:.09em;
@@ -107,11 +129,15 @@ h3{font-weight:700;font-size:20px;letter-spacing:-.012em;line-height:1.3}
   text-decoration:none;
   font-family:var(--font);font-weight:600;font-size:15.5px;line-height:1.2;
   border:1px solid var(--accent);cursor:pointer;
+  box-shadow:0 1px 2px rgba(11,17,32,.06),0 10px 22px -10px var(--accent-glow);
   transition:background .16s ease,border-color .16s ease,transform .16s ease,box-shadow .16s ease;
 }
-.btn:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn:hover{
+  background:var(--accent-deep);border-color:var(--accent-deep);
+  box-shadow:0 1px 2px rgba(11,17,32,.06),0 14px 28px -10px var(--accent-glow);
+}
 .btn:active{transform:translateY(1px)}
-.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+.btn.ghost{background:rgba(255,255,255,.7);color:var(--ink);border-color:var(--line-strong);box-shadow:none}
 .btn.ghost:hover{background:var(--surface);border-color:var(--ink-3);color:var(--ink)}
 
 /* ---------------------------------------------------------------
@@ -200,6 +226,7 @@ section{padding:var(--s9) 0}
 .section-head{max-width:56ch;margin-bottom:var(--s8)}
 .section-head p{color:var(--ink-2);font-size:18px}
 .wash{background:var(--wash)}
+.wash{background:linear-gradient(to bottom,var(--wash),#EEF1F7)}
 .wash .job-row,.wash .t-card,.wash .split-card,.wash .step{background:var(--surface)}
 
 /* ---------------------------------------------------------------
@@ -237,7 +264,7 @@ section{padding:var(--s9) 0}
   border:1px solid var(--line);
   border-radius:var(--r-lg);
   padding:var(--s6) var(--s6) var(--s5);
-  box-shadow:var(--shadow-card);
+  box-shadow:var(--shadow-lift);
 }
 .job-card.featured{position:relative;z-index:2}
 .job-card.behind{
@@ -285,6 +312,7 @@ section{padding:var(--s9) 0}
   border-radius:var(--r-lg);
   padding:var(--s7) var(--s6);
   display:flex;flex-direction:column;
+  box-shadow:var(--shadow-sm);
 }
 .split-card h3{font-size:23px;margin-bottom:var(--s2)}
 .split-card > p{color:var(--ink-2);margin-bottom:var(--s5)}
@@ -305,20 +333,22 @@ section{padding:var(--s9) 0}
 /* ---------------------------------------------------------------
    Process — numbered, joined by a rule
    --------------------------------------------------------------- */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:step}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4);counter-reset:step}
 .step{
-  padding:var(--s6) var(--s5) var(--s6) 0;
-  margin-right:var(--s5);
-  border-top:2px solid var(--ink);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  padding:var(--s6) var(--s5);
   counter-increment:step;
-  position:relative;
+  box-shadow:var(--shadow-sm);
 }
-.step:last-child{margin-right:0}
 .step::before{
-  content:counter(step,decimal-leading-zero);
-  display:block;
-  font-weight:800;font-size:14px;color:var(--accent);
-  letter-spacing:.1em;margin-bottom:var(--s4);
+  content:counter(step);
+  display:grid;place-items:center;
+  width:38px;height:38px;margin-bottom:var(--s5);
+  border-radius:50%;
+  background:var(--accent-wash);color:var(--accent-deep);
+  font-weight:800;font-size:15px;
   font-variant-numeric:tabular-nums;
 }
 .step h3{font-size:18.5px;margin-bottom:var(--s2)}
@@ -348,7 +378,7 @@ section{padding:var(--s9) 0}
   background:var(--surface);
   transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease;
 }
-.job-row:hover{border-color:var(--line-strong);box-shadow:var(--shadow-card);transform:translateY(-1px)}
+.job-row:hover{border-color:#C7D4F5;box-shadow:var(--shadow-card);transform:translateY(-2px)}
 .jr-main{min-width:0}
 .jr-title{font-weight:700;font-size:18px;letter-spacing:-.015em;line-height:1.3}
 .jr-team{color:var(--ink-3);font-size:14.5px;margin-top:2px}
@@ -382,6 +412,7 @@ section{padding:var(--s9) 0}
   border-radius:var(--r-lg);
   padding:var(--s7) var(--s6);
   display:flex;flex-direction:column;
+  box-shadow:var(--shadow-sm);
 }
 .t-card blockquote{
   font-size:19px;line-height:1.5;letter-spacing:-.012em;
@@ -434,7 +465,8 @@ form{
   background:var(--surface);
   border:1px solid var(--line);
   border-radius:var(--r-lg);
-  padding:var(--s6);
+  padding:var(--s7) var(--s6);
+  box-shadow:var(--shadow-card);
   display:flex;flex-direction:column;gap:var(--s4);
 }
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
@@ -442,7 +474,7 @@ form label{display:block;margin-bottom:var(--s2)}
 form input,form select,form textarea{
   width:100%;
   font-family:var(--font);font-size:16px;color:var(--ink);
-  background:var(--paper);
+  background:var(--accent-tint);
   border:1px solid var(--line-strong);
   border-radius:var(--r-sm);
   padding:11px 14px;
@@ -460,6 +492,7 @@ form .btn{align-self:flex-start;margin-top:var(--s1)}
 .form-fallback{
   background:var(--surface);border:1px solid var(--line);
   border-radius:var(--r-lg);padding:var(--s7) var(--s6);
+  box-shadow:var(--shadow-card);
 }
 .form-fallback p{margin-bottom:var(--s5);color:var(--ink-2)}
 
@@ -493,8 +526,7 @@ footer{background:var(--ink-surface);color:var(--on-ink);padding:var(--s7) 0}
    Responsive
    --------------------------------------------------------------- */
 @media (max-width:1000px){
-  .steps{grid-template-columns:1fr 1fr;gap:0 var(--s5)}
-  .step{margin-right:0;padding-right:var(--s5)}
+  .steps{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
   section{padding:var(--s8) 0}
@@ -536,7 +568,6 @@ footer{background:var(--ink-surface);color:var(--on-ink);padding:var(--s7) 0}
   .menu-toggle{display:block}
 
   .steps{grid-template-columns:1fr}
-  .step{padding:var(--s5) 0}
   .form-row{grid-template-columns:1fr}
   .hero-meta > div{
     border-right:none;margin-right:0;padding-right:var(--s6);

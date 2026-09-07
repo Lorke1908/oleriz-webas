@@ -53,6 +53,7 @@
     }
   },
   "promises": {
+    "eyebrow": "Why Northbound",
     "heading": "One agency, two promises",
     "intro": "Good recruitment works in both directions. Companies get people who stay; candidates get roles they actually want.",
     "employers": {
@@ -79,6 +80,7 @@
     }
   },
   "process": {
+    "eyebrow": "Our process",
     "heading": "From brief to signed offer in four steps",
     "intro": "A search that drags on costs you more than a fee ever will. Here's how we keep it moving.",
     "steps": [
@@ -101,6 +103,7 @@
     ]
   },
   "roles": {
+    "eyebrow": "Hiring now",
     "heading": "Open roles",
     "intro": "Every listing shows the real salary range. Apply directly, or send an open application if nothing fits yet.",
     "empty_message": "No open roles in this category right now — check back soon or send an open application.",
@@ -108,6 +111,7 @@
     "note_link": "Send an open application",
     "note_after": "and we'll contact you when the right role comes in.",
     "show_all": "Show all roles",
+    "page_eyebrow": "Current vacancies",
     "filter_all": "All",
     "filter_label": "Filter roles by category",
     "apply_label": "Apply",
@@ -116,6 +120,7 @@
     "page_intro": "Everything we're recruiting for right now. Every listing shows the real salary range."
   },
   "testimonials": {
+    "eyebrow": "Client stories",
     "heading": "What clients say once the seat is filled",
     "items": [
       {
@@ -131,6 +136,7 @@
     ]
   },
   "faq": {
+    "eyebrow": "Frequently asked",
     "heading": "Questions we hear before every search",
     "items": [
       {
@@ -156,6 +162,7 @@
     ]
   },
   "contact": {
+    "eyebrow": "Get in touch",
     "heading": "Tell us who you're looking for",
     "intro": "Describe the role in a few sentences — we'll reply within one business day with an honest view on timeline, salary range, and whether we're the right agency for the search.",
     "submit_label": "Send message",
