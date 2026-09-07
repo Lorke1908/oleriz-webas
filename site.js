@@ -155,6 +155,18 @@
     syncHeader();
   }
 
+  /* The CV block only concerns candidates, so it appears when they say so.
+     The select stores its own "candidate" wording, since it is translated. */
+  var typeSelect = document.getElementById("f-type");
+  var cvBlock = document.getElementById("cvBlock");
+  if (typeSelect && cvBlock) {
+    var syncCv = function () {
+      cvBlock.hidden = typeSelect.value !== typeSelect.dataset.candidate;
+    };
+    typeSelect.addEventListener("change", syncCv);
+    syncCv();
+  }
+
   var nav = document.getElementById("navLinks");
   var toggle = document.querySelector(".menu-toggle");
   if (toggle && nav) {

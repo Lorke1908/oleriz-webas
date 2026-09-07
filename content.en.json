@@ -239,15 +239,20 @@
     "fallback_note": "The contact form isn't switched on yet. Email us and we'll reply within one business day.",
     "fallback_cta": "Email us",
     "labels": {
-      "name": "Name",
+      "name": "Full name",
       "email": "Email",
       "phone": "Phone",
       "office": "Office",
-      "type": "I am…",
-      "type_employer": "An employer looking to hire",
-      "type_candidate": "A candidate looking for a role",
+      "phone_field": "Phone number",
+      "phone_optional": "optional",
+      "type": "Currently",
+      "type_employer": "Looking to hire",
+      "type_candidate": "Looking for a role",
       "message": "Message",
-      "message_placeholder": "e.g. We need a senior accountant, hybrid, starting within two months."
+      "message_placeholder": "e.g. We need a senior accountant, hybrid, starting within two months.",
+      "cv": "CV",
+      "cv_hint": "PDF or Word, up to 10 MB.",
+      "cv_email_note": "Send your CV by email — attach it to a message to"
     }
   },
   "footer": {

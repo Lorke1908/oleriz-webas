@@ -239,15 +239,20 @@
     "fallback_note": "Kontaktinė forma dar neįjungta. Parašykite mums el. paštu — atsakysime per vieną darbo dieną.",
     "fallback_cta": "Rašyti mums",
     "labels": {
-      "name": "Vardas",
+      "name": "Vardas Pavardė",
       "email": "El. paštas",
       "phone": "Telefonas",
       "office": "Biuras",
-      "type": "Aš esu…",
-      "type_employer": "Darbdavys, ieškantis darbuotojo",
-      "type_candidate": "Kandidatas, ieškantis darbo",
+      "phone_field": "Telefono numeris",
+      "phone_optional": "nebūtina",
+      "type": "Šiuo metu",
+      "type_employer": "Ieškau darbuotojo",
+      "type_candidate": "Ieškau darbo",
       "message": "Žinutė",
-      "message_placeholder": "pvz. Ieškome vyresniojo buhalterio, hibridinis darbas, pradžia per du mėnesius."
+      "message_placeholder": "pvz. Ieškome vyresniojo buhalterio, hibridinis darbas, pradžia per du mėnesius.",
+      "cv": "Gyvenimo aprašymas (CV)",
+      "cv_hint": "PDF arba Word, iki 10 MB.",
+      "cv_email_note": "Gyvenimo aprašymą atsiųskite el. paštu — prie žinutės prisekite jį adresu"
     }
   },
   "footer": {

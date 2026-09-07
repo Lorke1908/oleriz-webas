@@ -621,6 +621,25 @@ form textarea{min-height:132px;resize:vertical;line-height:1.55}
 form ::placeholder{color:var(--ink-3);opacity:1}
 form .btn{align-self:flex-start;margin-top:var(--s1)}
 .form-note{font-size:13px;color:var(--ink-3)}
+.label-note{
+  font-weight:500;letter-spacing:0;text-transform:none;
+  color:var(--ink-3);font-size:11.5px;
+}
+.field-note{font-size:13px;color:var(--ink-3);margin-top:var(--s2)}
+.field-note a{color:var(--ink);font-weight:600;text-underline-offset:3px}
+form input[type="file"]{
+  padding:9px 12px;font-size:14.5px;cursor:pointer;
+}
+form input[type="file"]::file-selector-button{
+  font-family:var(--font);font-size:14px;font-weight:600;
+  color:var(--ink);background:var(--surface);
+  border:1px solid var(--line-strong);border-radius:var(--r-pill);
+  padding:6px 14px;margin-right:var(--s3);cursor:pointer;
+  transition:background .15s ease,border-color .15s ease;
+}
+form input[type="file"]::file-selector-button:hover{
+  background:var(--wash);border-color:var(--ink-3);
+}
 
 .form-fallback{
   background:var(--surface);border:1px solid var(--line);

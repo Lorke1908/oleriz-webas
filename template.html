@@ -172,19 +172,41 @@
 {{/site.office}}
     </div>
 {{#site.formspree_id}}
+{{#site.cv_upload}}
+    <form name="contact" method="POST" enctype="multipart/form-data" action="https://formspree.io/f/{{site.formspree_id}}">
+{{/site.cv_upload}}
+{{^site.cv_upload}}
     <form name="contact" method="POST" action="https://formspree.io/f/{{site.formspree_id}}">
+{{/site.cv_upload}}
       <input type="hidden" name="_subject" value="{{contact.form_subject}}">
       <input type="hidden" name="_next" value="{{paths.url_thanks}}">
       <div class="form-row">
         <div><label for="f-name">{{contact.labels.name}}</label><input id="f-name" name="name" required autocomplete="name"></div>
         <div><label for="f-email">{{contact.labels.email}}</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
       </div>
-      <div>
-        <label for="f-type">{{contact.labels.type}}</label>
-        <select id="f-type" name="type">
-          <option>{{contact.labels.type_employer}}</option>
-          <option>{{contact.labels.type_candidate}}</option>
-        </select>
+      <div class="form-row">
+        <div>
+          <label for="f-phone">{{contact.labels.phone_field}} <span class="label-note">{{contact.labels.phone_optional}}</span></label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div>
+          <label for="f-type">{{contact.labels.type}}</label>
+          <select id="f-type" name="type" data-candidate="{{contact.labels.type_candidate}}">
+            <option>{{contact.labels.type_employer}}</option>
+            <option>{{contact.labels.type_candidate}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="cvBlock" hidden>
+{{#site.cv_upload}}
+        <label for="f-cv">{{contact.labels.cv}}</label>
+        <input id="f-cv" name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <p class="field-note">{{contact.labels.cv_hint}}</p>
+{{/site.cv_upload}}
+{{^site.cv_upload}}
+        <p class="field-note">{{contact.labels.cv_email_note}} <a href="mailto:{{site.email}}">{{site.email}}</a></p>
+{{/site.cv_upload}}
       </div>
       <div><label for="f-msg">{{contact.labels.message}}</label><textarea id="f-msg" name="message" required placeholder="{{contact.labels.message_placeholder}}"></textarea></div>
       <button class="btn" type="submit">{{contact.submit_label}}</button>

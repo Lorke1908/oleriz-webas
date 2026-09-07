@@ -665,15 +665,25 @@ content:
         type: string
         required: true
       - name: phone
-        label: Phone label
+        label: Phone label beside your number
         type: string
         required: true
+        description: Used in the contact details on the left, not on the form.
       - name: office
         label: Office label
         type: string
         required: true
+      - name: phone_field
+        label: Phone field on the form
+        type: string
+        required: true
+      - name: phone_optional
+        label: Optional marker
+        type: string
+        required: true
+        description: The small grey word after the phone label, e.g. "optional".
       - name: type
-        label: '"I am..." field'
+        label: Employer-or-candidate field
         type: string
         required: true
       - name: type_employer
@@ -684,6 +694,7 @@ content:
         label: 'Option: candidate'
         type: string
         required: true
+        description: Choosing this option is what reveals the CV block, so the two must match.
       - name: message
         label: Message field
         type: string
@@ -692,6 +703,21 @@ content:
         label: Message example text
         type: text
         required: true
+      - name: cv
+        label: CV field label
+        type: string
+        required: true
+      - name: cv_hint
+        label: CV hint text
+        type: text
+        required: true
+        description: Shown under the file picker when uploads are switched on.
+      - name: cv_email_note
+        label: CV text when uploads are off
+        type: text
+        required: true
+        description: Shown to candidates instead of a file picker. Your email address is added to the
+          end automatically.
   - name: footer
     label: Footer
     type: object
@@ -1238,15 +1264,25 @@ content:
         type: string
         required: true
       - name: phone
-        label: Phone label
+        label: Phone label beside your number
         type: string
         required: true
+        description: Used in the contact details on the left, not on the form.
       - name: office
         label: Office label
         type: string
         required: true
+      - name: phone_field
+        label: Phone field on the form
+        type: string
+        required: true
+      - name: phone_optional
+        label: Optional marker
+        type: string
+        required: true
+        description: The small grey word after the phone label, e.g. "optional".
       - name: type
-        label: '"I am..." field'
+        label: Employer-or-candidate field
         type: string
         required: true
       - name: type_employer
@@ -1257,6 +1293,7 @@ content:
         label: 'Option: candidate'
         type: string
         required: true
+        description: Choosing this option is what reveals the CV block, so the two must match.
       - name: message
         label: Message field
         type: string
@@ -1265,6 +1302,21 @@ content:
         label: Message example text
         type: text
         required: true
+      - name: cv
+        label: CV field label
+        type: string
+        required: true
+      - name: cv_hint
+        label: CV hint text
+        type: text
+        required: true
+        description: Shown under the file picker when uploads are switched on.
+      - name: cv_email_note
+        label: CV text when uploads are off
+        type: text
+        required: true
+        description: Shown to candidates instead of a file picker. Your email address is added to the
+          end automatically.
   - name: footer
     label: Footer
     type: object
@@ -1346,3 +1398,9 @@ content:
     label: Office address
     type: string
     description: Leave empty if you do not have one and the line is hidden from the contact section.
+  - name: cv_upload
+    label: Allow CV uploads
+    type: boolean
+    description: 'OFF unless your Formspree plan includes file uploads. The free plan does not: a CV attached
+      to the form would be dropped without warning. While this is off, candidates are asked to email their
+      CV instead.'
