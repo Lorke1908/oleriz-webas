@@ -11,9 +11,9 @@
 
 :root{
   /* ink */
-  --ink:#0B1120;
-  --ink-2:#4A5768;
-  --ink-3:#7C889B;
+  --ink:#000000;
+  --ink-2:#2E3238;
+  --ink-3:#565B63;
 
   /* accent */
   --accent:#2A5CE8;
@@ -26,7 +26,7 @@
   --paper:#FBFBFD;
   --surface:#FFFFFF;
   --wash:#F4F6FA;
-  --ink-surface:#0B1120;
+  --ink-surface:#111318;
   --on-ink:#E8ECF3;
   --on-ink-dim:#8C99AC;
 
@@ -201,15 +201,15 @@ header.is-scrolled .nav{
 
 .nav-links{display:flex;gap:var(--s5);align-items:center;list-style:none}
 .nav-links a{
-  text-decoration:none;font-size:15px;font-weight:500;
-  color:var(--ink-2);transition:color .15s ease;
+  text-decoration:none;font-size:15px;font-weight:600;
+  color:var(--ink);transition:color .15s ease;
 }
-.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover{color:var(--accent)}
 .nav-links .btn{color:#fff;padding:10px 20px;font-size:15px}
 .lang-switch{
   font-weight:700;font-size:12.5px;letter-spacing:.08em;
   border:1px solid rgba(210,217,229,.9);border-radius:var(--r-pill);
-  padding:5px 11px;color:var(--ink-2)!important;
+  padding:5px 11px;color:var(--ink)!important;
   background:rgba(255,255,255,.6);
   transition:border-color .15s ease,background .15s ease;
 }
