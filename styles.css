@@ -602,9 +602,14 @@ footer{background:var(--ink-surface);color:var(--on-ink);padding:var(--s7) 0}
 }
 /* the nav carries four links, so it folds before the rest of the layout */
 @media (max-width:940px){
-  .nav{position:relative;width:100%;justify-content:space-between;
-       gap:var(--s4);height:56px;padding:0 10px 0 20px}
-  header.is-scrolled .nav{height:52px}
+  header{padding:var(--s3) 0}
+  .nav{
+    position:relative;width:100%;justify-content:space-between;
+    gap:var(--s4);height:60px;padding:0;
+    background:none;border-color:transparent;box-shadow:none;
+    -webkit-backdrop-filter:none;backdrop-filter:none;
+  }
+  header.is-scrolled .nav{height:56px;border-color:transparent;box-shadow:none}
   .nav-links{
     display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;
     flex-direction:column;align-items:stretch;gap:0;
@@ -620,7 +625,18 @@ footer{background:var(--ink-surface);color:var(--on-ink);padding:var(--s7) 0}
   .nav-links li:last-child{border-bottom:none;padding-top:var(--s2)}
   .nav-links a{display:block;padding:var(--s4) 0;font-size:16px}
   .nav-links .btn,.nav-links .lang-switch{display:inline-flex;padding:11px 22px}
-  .menu-toggle{display:block}
+  .menu-toggle{
+    display:grid;place-items:center;
+    width:42px;height:42px;padding:0;
+    margin-right:-9px;              /* optically aligns the icon to the gutter */
+    border-radius:var(--r-pill);
+    background:transparent;border:1px solid transparent;
+    transition:background .18s ease,border-color .18s ease;
+  }
+  .menu-toggle:hover{background:rgba(255,255,255,.6);border-color:var(--line)}
+  .menu-toggle[aria-expanded="true"]{
+    background:var(--surface);border-color:var(--line-strong);
+  }
 }
 
 @media (max-width:900px){
