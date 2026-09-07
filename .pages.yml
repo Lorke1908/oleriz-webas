@@ -284,24 +284,6 @@ content:
       description: PLEASE READ — these came with the design and are NOT real figures for your agency.
         Replace them with numbers you can stand behind, or delete all three.
       fields:
-      - name: icon
-        label: Icon
-        type: select
-        required: true
-        default: users
-        description: The small blue symbol above the number.
-        options:
-          values:
-          - users
-          - clock
-          - shield
-          - trend
-          - target
-          - briefcase
-          - star
-          - building
-          - chat
-          - calendar
       - name: value
         label: Number
         type: string
@@ -886,24 +868,6 @@ content:
       description: PLEASE READ — these came with the design and are NOT real figures for your agency.
         Replace them with numbers you can stand behind, or delete all three.
       fields:
-      - name: icon
-        label: Icon
-        type: select
-        required: true
-        default: users
-        description: The small blue symbol above the number.
-        options:
-          values:
-          - users
-          - clock
-          - shield
-          - trend
-          - target
-          - briefcase
-          - star
-          - building
-          - chat
-          - calendar
       - name: value
         label: Number
         type: string

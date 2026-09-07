@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=c50cc08ced">
+<link rel="stylesheet" href="styles.css?v=7977452281">
 </head>
 <body>
 
@@ -127,6 +127,25 @@
   </div>
 </section>
 
+<section id="roles">
+<div class="wrap">
+  <div class="section-head">
+      <span class="eyebrow">Šiuo metu ieškome</span>
+    <h2>Darbo skelbimai</h2>
+    <p>Kiekviename skelbime nurodomas tikras atlyginimo rėžis. Kandidatuokite tiesiogiai arba atsiųskite atvirą paraišką, jei kol kas niekas netinka.</p>
+  </div>
+
+  <div id="jobList"></div>
+  <div class="roles-empty" id="rolesEmpty" hidden>Šioje srityje šiuo metu atvirų pozicijų nėra — užsukite vėliau arba atsiųskite atvirą paraišką.</div>
+
+  <div class="roles-more">
+    <a class="btn" href="roles.html">Visi darbo skelbimai</a>
+  </div>
+
+  <p class="roles-note">Nieko tinkamo? <a href="index.html#contact">Atsiųskite atvirą paraišką</a> ir susisieksime, kai atsiras tinkama pozicija.</p>
+</div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="cta-band">
@@ -152,6 +171,19 @@
   </div>
 </footer>
 
+<script>
+window.SITE = {
+  jobsUrl: "jobs.lt.json",
+  limit: 5,
+  filters: false,
+  strings: {
+    all: "Visos",
+    empty: "Šioje srityje šiuo metu atvirų pozicijų nėra — užsukite vėliau arba atsiųskite atvirą paraišką.",
+    error: "Skelbimų įkelti nepavyko. Parašykite mums ir atsiųsime dabartinį sąrašą.",
+    apply: "Kandidatuoti"
+  }
+};
+</script>
 <script src="site.js?v=25423a16ec"></script>
 </body>
 </html>

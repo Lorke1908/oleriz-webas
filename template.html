@@ -17,14 +17,6 @@
         <a class="btn" href="#contact">{{hero.cta_primary}}</a>
         <a class="btn ghost" href="{{paths.roles}}">{{hero.cta_secondary}}</a>
       </div>
-      <div class="hero-meta">
-{{#hero.stats}}
-        <div>
-          <span class="stat-icon stat-icon--{{icon}}" aria-hidden="true"></span>
-          <strong>{{value}}</strong>{{label}}
-        </div>
-{{/hero.stats}}
-      </div>
     </div>
 
     <div class="hero-card-stack" aria-hidden="true">
@@ -32,7 +24,7 @@
       <div class="job-card behind"></div>
       <div class="job-card featured">
         <div class="jc-head">
-          <span class="jc-logo stat-icon--briefcase"></span>
+          <span class="jc-logo" aria-hidden="true"></span>
           <div class="jc-headings">
             <div class="jc-title">{{hero.card.title}}</div>
             <div class="jc-firm">{{hero.card.firm}}</div>
@@ -52,6 +44,16 @@
           <a class="jc-apply" href="{{paths.roles}}" tabindex="-1">{{hero.card.cta}}</a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-meta">
+{{#hero.stats}}
+      <div>
+        <strong>{{value}}</strong>{{label}}
+      </div>
+{{/hero.stats}}
     </div>
   </div>
 </section>
@@ -114,24 +116,7 @@
 
 <!-- ============ OPEN ROLES ============ -->
 <section class="wash" id="roles">
-  <div class="wrap">
-    <div class="section-head">
-      {{#roles.eyebrow}}
-        <span class="eyebrow">{{.}}</span>
-      {{/roles.eyebrow}}
-      <h2>{{roles.heading}}</h2>
-      <p>{{roles.intro}}</p>
-    </div>
-
-    <div id="jobList"></div>
-    <div class="roles-empty" id="rolesEmpty" hidden>{{roles.empty_message}}</div>
-
-    <div class="roles-more">
-      <a class="btn" href="{{paths.roles}}">{{roles.show_all}}</a>
-    </div>
-
-    <p class="roles-note">{{roles.note_before}} <a href="#contact">{{roles.note_link}}</a> {{roles.note_after}}</p>
-  </div>
+{{> partials/roles-teaser.html }}
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
@@ -218,19 +203,6 @@
 
 {{> partials/footer.html }}
 
-<script>
-window.SITE = {
-  jobsUrl: "{{paths.jobs}}",
-  limit: 5,
-  filters: false,
-  strings: {
-    all: "{{roles.filter_all}}",
-    empty: "{{roles.empty_message}}",
-    error: "{{roles.error_message}}",
-    apply: "{{roles.apply_label}}"
-  }
-};
-</script>
-<script src="{{paths.site_js}}"></script>
+{{> partials/roles-script.html }}
 </body>
 </html>

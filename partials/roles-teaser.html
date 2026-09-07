@@ -1,0 +1,18 @@
+<div class="wrap">
+  <div class="section-head">
+    {{#roles.eyebrow}}
+      <span class="eyebrow">{{.}}</span>
+    {{/roles.eyebrow}}
+    <h2>{{roles.heading}}</h2>
+    <p>{{roles.intro}}</p>
+  </div>
+
+  <div id="jobList"></div>
+  <div class="roles-empty" id="rolesEmpty" hidden>{{roles.empty_message}}</div>
+
+  <div class="roles-more">
+    <a class="btn" href="{{paths.roles}}">{{roles.show_all}}</a>
+  </div>
+
+  <p class="roles-note">{{roles.note_before}} <a href="{{paths.home_anchor}}#contact">{{roles.note_link}}</a> {{roles.note_after}}</p>
+</div>
