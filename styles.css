@@ -46,7 +46,6 @@
   --shadow-card:0 1px 2px rgba(11,17,32,.04),0 18px 44px -18px rgba(11,17,32,.18);
   --shadow-lift:0 1px 2px rgba(11,17,32,.05),0 28px 60px -24px rgba(11,17,32,.26);
   --ring:0 0 0 3px rgba(42,92,232,.28);
-  --icon-briefcase:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.9" y="7.4" width="18.2" height="12.2" rx="2.6"/><path d="M8.4 7.4V6a2 2 0 0 1 2-2h3.2a2 2 0 0 1 2 2v1.4"/><path d="M2.9 12.6h18.2"/></svg>');
   --icon-arrow:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>');
 }
 
@@ -296,17 +295,6 @@ section{padding:var(--s9) 0}
 }
 .job-card.behind-2{transform:rotate(-2.5deg) translate(-14px,30px);opacity:.28}
 .jc-head{display:flex;align-items:flex-start;gap:var(--s4);margin-bottom:var(--s5)}
-.jc-logo{
-  flex-shrink:0;width:46px;height:46px;border-radius:14px;
-  background:linear-gradient(135deg,var(--accent),var(--accent-deep));
-  display:grid;place-items:center;
-  box-shadow:0 8px 18px -8px var(--accent-glow);
-}
-.jc-logo::before{
-  content:"";width:23px;height:23px;background:#fff;
-  -webkit-mask:var(--icon-briefcase) center/contain no-repeat;
-  mask:var(--icon-briefcase) center/contain no-repeat;
-}
 .jc-headings{flex:1;min-width:0}
 .jc-title{font-weight:700;font-size:19.5px;line-height:1.25;letter-spacing:-.022em}
 .jc-badge{
@@ -678,7 +666,9 @@ footer{background:var(--ink-surface);color:var(--on-ink);padding:var(--s7) 0}
   .cta-band{padding:var(--s8) var(--s5)}
   .hero{padding:var(--s8) 0}
   .hero-grid,.contact-grid{grid-template-columns:1fr;gap:var(--s7)}
-  .hero-card-stack{max-width:420px}
+  .hero-card-stack{max-width:400px;margin:0 auto}
+  .job-card.behind{transform:rotate(2.5deg) translate(10px,13px)}
+  .job-card.behind-2{transform:rotate(-2deg) translate(-9px,20px)}
   .split,.t-grid{grid-template-columns:1fr}
   .section-head{margin-bottom:var(--s7)}
 
