@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northbound — Recruitment that fits</title>
+<meta name="description" content="Northbound is a recruitment agency placing vetted professionals in roles they'll stay in. Browse open roles or hire with us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF;
+  --ink:#0F1C2E;
+  --ink-soft:#51607A;
+  --pine:#2A5CE8;
+  --pine-deep:#1E45C2;
+  --moss:#F3F6FB;
+  --line:#E4E8F0;
+  --white:#FFFFFF;
+  --radius:14px;
+  --serif:"Plus Jakarta Sans", -apple-system, sans-serif;
+  --sans:"Plus Jakarta Sans", -apple-system, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,249,246,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-size:22px;font-weight:800;text-decoration:none;letter-spacing:-.02em}
+.logo span{color:var(--pine)}
+.nav-links{display:flex;gap:32px;align-items:center;list-style:none}
+.nav-links a{text-decoration:none;font-size:15.5px;color:var(--ink-soft);transition:color .15s}
+.nav-links a:hover{color:var(--ink)}
+.btn{
+  display:inline-block;
+  background:var(--pine);color:#fff;
+  padding:11px 22px;border-radius:999px;
+  text-decoration:none;font-weight:500;font-size:15.5px;
+  border:none;cursor:pointer;font-family:var(--sans);
+  transition:background .15s;
+}
+.btn:hover{background:var(--pine-deep)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{background:var(--white);border-color:var(--ink-soft)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:2px solid var(--pine);outline-offset:2px;border-radius:4px;
+}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.menu-toggle svg{display:block}
+
+/* ---------- Hero ---------- */
+.hero{padding:88px 0 96px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+h1{
+  font-family:var(--serif);font-weight:800;
+  font-size:clamp(38px,5vw,60px);
+  line-height:1.1;letter-spacing:-.025em;
+  margin-bottom:24px;
+}
+h1 em{font-style:normal;color:var(--pine)}
+.hero p{font-size:19px;color:var(--ink-soft);max-width:46ch;margin-bottom:34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-meta{margin-top:44px;display:flex;gap:36px;color:var(--ink-soft);font-size:15px}
+.hero-meta strong{display:block;font-family:var(--serif);font-weight:800;font-size:28px;color:var(--ink);line-height:1.2;letter-spacing:-.02em}
+
+/* The featured job card — the hero's visual */
+.hero-card-stack{position:relative}
+.job-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:26px 28px;
+  box-shadow:0 8px 30px rgba(15,28,46,.08);
+}
+.job-card.featured{position:relative;z-index:2}
+.job-card.behind{
+  position:absolute;inset:0;
+  transform:rotate(3deg) translate(14px,18px);
+  z-index:1;opacity:.55;
+}
+.job-card.behind-2{transform:rotate(-2.5deg) translate(-12px,26px);opacity:.3}
+.jc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px}
+.jc-title{font-family:var(--serif);font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.01em}
+.jc-badge{
+  flex-shrink:0;
+  background:var(--moss);color:var(--pine-deep);
+  font-size:13px;font-weight:600;
+  padding:5px 12px;border-radius:999px;white-space:nowrap;
+}
+.jc-firm{color:var(--ink-soft);font-size:15.5px;margin-bottom:16px}
+.jc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.jc-tags span{
+  border:1px solid var(--line);border-radius:999px;
+  padding:4px 12px;font-size:13.5px;color:var(--ink-soft);
+}
+.jc-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:16px}
+.jc-salary{font-weight:600;font-size:16px}
+.jc-salary small{display:block;font-weight:400;color:var(--ink-soft);font-size:13px}
+.jc-apply{font-weight:500;color:var(--pine);text-decoration:none;font-size:15.5px}
+.jc-apply:hover{text-decoration:underline}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero-grid > *{opacity:0;transform:translateY(16px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards}
+  .hero-grid > :nth-child(2){animation-delay:.15s}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+
+/* ---------- Section scaffolding ---------- */
+section{padding:88px 0}
+.section-head{max-width:60ch;margin-bottom:52px}
+h2{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(28px,3.2vw,40px);
+  line-height:1.15;letter-spacing:-.02em;
+  margin-bottom:14px;
+}
+.section-head p{color:var(--ink-soft);font-size:18px}
+.wash{background:var(--moss)}
+.wash .job-row,.wash .t-card{background:var(--white)}
+
+/* ---------- Two audiences ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.split-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:36px;
+}
+.split-card h3{font-family:var(--serif);font-weight:700;font-size:23px;letter-spacing:-.01em;margin-bottom:10px}
+.split-card > p{color:var(--ink-soft);margin-bottom:22px}
+.split-card ul{list-style:none;margin-bottom:26px}
+.split-card li{
+  padding:9px 0 9px 30px;position:relative;
+  border-bottom:1px solid var(--line);font-size:16px;
+}
+.split-card li:last-child{border-bottom:none}
+.split-card li::before{
+  content:"";position:absolute;left:0;top:16px;
+  width:16px;height:16px;
+  background:var(--pine);
+  mask:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="black" d="M6.5 12.2 2.3 8l1.4-1.4 2.8 2.8 5.8-5.8L13.7 5z"/></svg>') center/contain no-repeat;
+}
+
+/* ---------- Process ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+.step{padding:28px 24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);counter-increment:step}
+.step::before{
+  content:counter(step,decimal-leading-zero);
+  font-family:var(--serif);font-weight:800;font-size:28px;color:var(--pine);
+  display:block;margin-bottom:14px;letter-spacing:-.02em;
+}
+.step h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.step p{color:var(--ink-soft);font-size:15.5px}
+
+/* ---------- Open roles ---------- */
+.roles-toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.chip{
+  border:1px solid var(--line);background:var(--white);
+  border-radius:999px;padding:8px 18px;
+  font-size:15px;cursor:pointer;font-family:var(--sans);color:var(--ink-soft);
+  transition:all .15s;
+}
+.chip:hover{border-color:var(--ink-soft);color:var(--ink)}
+.chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.job-row{
+  display:grid;
+  grid-template-columns:2.2fr 1fr 1fr 1fr auto;
+  gap:18px;align-items:center;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px 26px;
+  margin-bottom:12px;
+  background:var(--white);
+  transition:border-color .15s, box-shadow .15s;
+}
+.job-row:hover{border-color:var(--pine);box-shadow:0 2px 10px rgba(39,93,62,.08)}
+.jr-title{font-family:var(--serif);font-weight:700;font-size:18px;line-height:1.3;letter-spacing:-.01em}
+.jr-title small{display:block;font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin-top:3px}
+.jr-cell{font-size:15.5px;color:var(--ink-soft)}
+.jr-cell strong{display:block;color:var(--ink);font-weight:500}
+.roles-empty{
+  border:1px dashed var(--line);border-radius:var(--radius);
+  padding:44px;text-align:center;color:var(--ink-soft);display:none;
+}
+.roles-note{margin-top:24px;color:var(--ink-soft);font-size:15.5px}
+.roles-note a{color:var(--pine)}
+
+/* ---------- Testimonials ---------- */
+.t-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.t-card{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:34px;background:var(--white);
+}
+.t-card blockquote{
+  font-family:var(--sans);font-weight:500;font-size:18px;line-height:1.55;
+  margin-bottom:22px;
+}
+.t-card cite{font-style:normal;font-size:15.5px;color:var(--ink-soft)}
+.t-card cite strong{display:block;color:var(--ink);font-weight:600}
+
+/* ---------- FAQ ---------- */
+.faq-list{max-width:760px}
+.faq-list details{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--white);margin-bottom:12px;
+  padding:0 24px;
+}
+.faq-list summary{
+  cursor:pointer;list-style:none;
+  padding:20px 0;
+  font-size:17.5px;font-weight:500;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{
+  content:"+";
+  font-family:var(--sans);font-weight:400;font-size:26px;color:var(--pine);
+  line-height:1;flex-shrink:0;
+  transition:transform .2s;
+}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+.faq-list details p{
+  padding:0 0 22px;color:var(--ink-soft);max-width:62ch;
+}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+.contact-info p{color:var(--ink-soft);margin-bottom:26px;max-width:44ch}
+.contact-line{padding:14px 0;border-top:1px solid var(--line);font-size:16px}
+.contact-line span{color:var(--ink-soft);display:block;font-size:14px;margin-bottom:2px}
+.contact-line a{color:var(--ink);text-decoration:none}
+.contact-line a:hover{color:var(--pine)}
+form{display:grid;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-size:14.5px;font-weight:500;display:block;margin-bottom:6px}
+input,textarea,select{
+  width:100%;
+  border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px;font-family:var(--sans);font-size:16px;
+  background:var(--white);color:var(--ink);
+}
+input:focus,textarea:focus,select:focus{border-color:var(--pine)}
+textarea{resize:vertical;min-height:120px}
+.form-note{font-size:13.5px;color:var(--ink-soft)}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line);padding:48px 0;font-size:15px;color:var(--ink-soft)}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.foot a{color:var(--ink-soft);text-decoration:none;margin-left:22px}
+.foot a:hover{color:var(--ink)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .hero-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+  .steps{grid-template-columns:1fr 1fr}
+  .hero{padding:56px 0 72px}
+  section{padding:64px 0}
+}
+@media (max-width:680px){
+  .nav-links{
+    display:none;
+    position:absolute;top:68px;left:0;right:0;
+    background:var(--paper);border-bottom:1px solid var(--line);
+    flex-direction:column;padding:20px 24px;gap:18px;align-items:flex-start;
+  }
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .split,.t-grid,.steps{grid-template-columns:1fr}
+  .job-row{grid-template-columns:1fr;gap:8px;padding:20px}
+  .jr-cell{display:flex;gap:6px}
+  .jr-cell strong{display:inline}
+  .job-row .btn{justify-self:start;margin-top:6px}
+  .form-row{grid-template-columns:1fr}
+  .hero-meta{gap:24px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">North<span>bound</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#202721" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#employers">For employers</a></li>
+      <li><a href="#process">How we work</a></li>
+      <li><a href="#roles">Open roles</a></li>
+      <li><a href="#contact" class="btn">Hire with us</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>The right person, in the right seat, <em>still there next year.</em></h1>
+      <p>Northbound is a recruitment agency for companies tired of slow shortlists and bad fits. We meet every candidate before you do — so you only interview people worth your time.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#contact">Hire with us</a>
+        <a class="btn ghost" href="#roles">Browse open roles</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>230+</strong>placements made</div>
+        <div><strong>14 days</strong>average to shortlist</div>
+        <div><strong>92%</strong>still in role after a year</div>
+      </div>
+    </div>
+
+    <div class="hero-card-stack" aria-hidden="true">
+      <div class="job-card behind behind-2"></div>
+      <div class="job-card behind"></div>
+      <div class="job-card featured">
+        <div class="jc-top">
+          <div class="jc-title">Senior Accountant</div>
+          <div class="jc-badge">New this week</div>
+        </div>
+        <div class="jc-firm">Manufacturing group · 400 employees</div>
+        <div class="jc-tags">
+          <span>Full-time</span><span>Hybrid</span><span>Finance</span>
+        </div>
+        <div class="jc-foot">
+          <div class="jc-salary">€3,200–3,800 <small>gross / month</small></div>
+          <a class="jc-apply" href="#roles">View role</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOR EMPLOYERS / CANDIDATES ============ -->
+<section class="wash" id="employers">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>One agency, two promises</h2>
+      <p>Good recruitment works in both directions. Companies get people who stay; candidates get roles they actually want.</p>
+    </div>
+    <div class="split">
+      <div class="split-card">
+        <h3>For employers</h3>
+        <p>Stop sifting through a hundred CVs to find three worth calling.</p>
+        <ul>
+          <li>Every candidate interviewed and reference-checked before you see them</li>
+          <li>A shortlist of 3–5 people, not a pile of applications</li>
+          <li>Salary benchmarking so your offer lands the first time</li>
+          <li>Replacement guarantee if a placement doesn't work out</li>
+        </ul>
+        <a class="btn" href="#contact">Start a search</a>
+      </div>
+      <div class="split-card">
+        <h3>For candidates</h3>
+        <p>No ghosting, no mystery roles, no CVs sent without your consent.</p>
+        <ul>
+          <li>Real salary ranges published on every role</li>
+          <li>Honest feedback after every interview, within 48 hours</li>
+          <li>Your CV never shared without your explicit yes</li>
+          <li>Free — candidates never pay us anything</li>
+        </ul>
+        <a class="btn ghost" href="#roles">See open roles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>From brief to signed offer in four steps</h2>
+      <p>A search that drags on costs you more than a fee ever will. Here's how we keep it moving.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Intake call</h3>
+        <p>45 minutes on the role, the team, and what "great" looks like — not just the job description.</p>
+      </div>
+      <div class="step">
+        <h3>Search &amp; screen</h3>
+        <p>We approach people directly, interview every candidate, and check references early, not last.</p>
+      </div>
+      <div class="step">
+        <h3>Shortlist</h3>
+        <p>3–5 vetted candidates within two weeks, each with our written assessment and salary expectations.</p>
+      </div>
+      <div class="step">
+        <h3>Offer &amp; onboarding</h3>
+        <p>We handle negotiation and stay in touch through the first 90 days to make sure it sticks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPEN ROLES ============ -->
+<section class="wash" id="roles">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Open roles</h2>
+      <p>Every listing shows the real salary range. Apply directly, or send an open application if nothing fits yet.</p>
+    </div>
+
+    <div class="roles-toolbar" id="filters" role="group" aria-label="Filter roles by category"></div>
+    <div id="jobList"></div>
+    <div class="roles-empty" id="rolesEmpty">No open roles in this category right now — check back soon or send an open application.</div>
+
+    <p class="roles-note">Nothing that fits? <a href="#contact">Send an open application</a> and we'll contact you when the right role comes in.</p>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What clients say once the seat is filled</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <blockquote>“We'd been searching for a head of logistics for five months. Northbound had a signed offer in three weeks — and she's still with us two years later.”</blockquote>
+        <cite><strong>Operations Director</strong>Logistics company, 250 employees</cite>
+      </div>
+      <div class="t-card">
+        <blockquote>“The shortlist was three people. We would happily have hired all three. That has never happened to us with an agency before.”</blockquote>
+        <cite><strong>Managing Director</strong>Engineering firm, 80 employees</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Questions we hear before every search</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>What does a search cost, and when do we pay?</summary>
+        <p>Our fee is a percentage of the placed candidate's first-year salary, invoiced only when they sign. No upfront costs, no charge if we don't fill the role.</p>
+      </details>
+      <details>
+        <summary>How long until we see candidates?</summary>
+        <p>You'll have a shortlist of 3–5 interviewed, reference-checked candidates within two weeks of the intake call for most roles. Niche or executive searches can take longer — we'll tell you honestly at the start.</p>
+      </details>
+      <details>
+        <summary>What if the placement doesn't work out?</summary>
+        <p>Every placement comes with a replacement guarantee: if the person leaves within the guarantee period, we run the search again at no additional fee.</p>
+      </details>
+      <details>
+        <summary>Do candidates pay anything?</summary>
+        <p>Never. Our services are completely free for candidates — the hiring company pays our fee.</p>
+      </details>
+      <details>
+        <summary>Is the search confidential?</summary>
+        <p>Yes, on both sides. We can run fully confidential searches for sensitive replacements, and we never share a candidate's CV with anyone without their explicit consent.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="wash" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <h2>Tell us who you're looking for</h2>
+      <p>Describe the role in a few sentences — we'll reply within one business day with an honest view on timeline, salary range, and whether we're the right agency for the search.</p>
+      <div class="contact-line"><span>Email</span><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></div>
+      <div class="contact-line"><span>Phone</span><a href="tel:+37060000000">+370 600 00 000</a></div>
+      <div class="contact-line"><span>Office</span>Your address here</div>
+    </div>
+    <form name="contact" method="POST" data-netlify="true" action="/thanks">
+      <input type="hidden" name="form-name" value="contact">
+      <div class="form-row">
+        <div><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
+        <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+      </div>
+      <div>
+        <label for="f-type">I am…</label>
+        <select id="f-type" name="type">
+          <option>An employer looking to hire</option>
+          <option>A candidate looking for a role</option>
+        </select>
+      </div>
+      <div><label for="f-msg">Message</label><textarea id="f-msg" name="message" required placeholder="e.g. We need a senior accountant, hybrid, starting within two months."></textarea></div>
+      <button class="btn" type="submit">Send message</button>
+      <p class="form-note">We reply within one business day. Your details are never shared.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Northbound Recruitment. All rights reserved.</div>
+    <div>
+      <a href="#employers">For employers</a>
+      <a href="#roles">Open roles</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   Job postings now live in jobs.json — edit that file, not this one.
+   Each entry needs: title, team, category, location, type, salary,
+   experience (e.g. "3+ years"), level (e.g. "Senior").
+   Optional: link (URL to an application form or email).
+   ===================================================================== */
+let JOBS = [];
+
+const jobList = document.getElementById("jobList");
+const filtersEl = document.getElementById("filters");
+const emptyEl = document.getElementById("rolesEmpty");
+let activeCat = "All";
+const EMPTY_TEXT = document.getElementById("rolesEmpty").textContent;
+
+function esc(s){const d=document.createElement("div");d.textContent=s;return d.innerHTML}
+
+function renderFilters(){
+  const cats = ["All", ...new Set(JOBS.map(j => j.category))];
+  filtersEl.innerHTML = cats.map(c =>
+    `<button class="chip${c===activeCat?" active":""}" data-cat="${esc(c)}" aria-pressed="${c===activeCat}">${esc(c)}</button>`
+  ).join("");
+}
+
+function renderJobs(){
+  const shown = activeCat==="All" ? JOBS : JOBS.filter(j => j.category===activeCat);
+  emptyEl.textContent = EMPTY_TEXT;
+  emptyEl.style.display = shown.length ? "none" : "block";
+  jobList.innerHTML = shown.map(j => `
+    <div class="job-row">
+      <div class="jr-title">${esc(j.title)}<small>${esc(j.team)}</small></div>
+      <div class="jr-cell"><strong>${esc(j.category)}</strong>${esc(j.level || "")}</div>
+      <div class="jr-cell"><strong>${esc(j.location)} · ${esc(j.type)}</strong>${esc(j.experience || "")}</div>
+      <div class="jr-cell"><strong>${esc(j.salary)}</strong></div>
+      <a class="btn ghost" href="${esc(j.link || "#contact")}">Apply</a>
+    </div>`).join("");
+}
+
+function setCat(c){activeCat=c;renderFilters();renderJobs()}
+filtersEl.addEventListener("click", e => {
+  const btn = e.target.closest("[data-cat]");
+  if (btn) setCat(btn.dataset.cat);
+});
+function toggleMenu(btn){
+  const links=document.getElementById("navLinks");
+  const open=links.classList.toggle("open");
+  btn.setAttribute("aria-expanded",open);
+}
+document.getElementById("navLinks").addEventListener("click",e=>{
+  if(e.target.tagName==="A"){
+    document.getElementById("navLinks").classList.remove("open");
+    document.querySelector(".menu-toggle").setAttribute("aria-expanded","false");
+  }
+});
+
+function showMessage(msg){
+  filtersEl.innerHTML = "";
+  jobList.innerHTML = "";
+  emptyEl.textContent = msg;
+  emptyEl.style.display = "block";
+}
+
+fetch("jobs.json", {cache:"no-cache"})
+  .then(r => { if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  .then(data => {
+    if(!Array.isArray(data)) throw new Error("jobs.json must contain an array");
+    JOBS = data;
+    if(!JOBS.length){
+      showMessage("No open roles right now — check back soon, or send an open application.");
+      return;
+    }
+    renderFilters();
+    renderJobs();
+  })
+  .catch(err => {
+    console.error("Could not load jobs.json:", err);
+    showMessage("Open roles couldn’t be loaded. Please email us and we’ll send the current list.");
+  });
+</script>
+</body>
+</html>

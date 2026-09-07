@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message sent — Northbound</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0F1C2E;--ink-soft:#51607A;--blue:#2A5CE8;--blue-deep:#1E45C2;--line:#E4E8F0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Plus Jakarta Sans",-apple-system,sans-serif;
+  background:#FFFFFF;color:var(--ink);
+  min-height:100vh;display:grid;place-items:center;padding:24px;
+  -webkit-font-smoothing:antialiased;
+}
+.card{max-width:520px;text-align:center}
+.tick{
+  width:64px;height:64px;margin:0 auto 28px;
+  background:#F3F6FB;border-radius:50%;
+  display:grid;place-items:center;
+}
+h1{font-size:32px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+p{color:var(--ink-soft);font-size:17px;line-height:1.6;margin-bottom:32px}
+a.btn{
+  display:inline-block;background:var(--blue);color:#fff;
+  padding:12px 26px;border-radius:999px;
+  text-decoration:none;font-weight:500;font-size:15.5px;
+}
+a.btn:hover{background:var(--blue-deep)}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="tick">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6.5" stroke="#2A5CE8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <h1>Message received</h1>
+  <p>Thanks for getting in touch. We reply to every message within one business day.</p>
+  <a class="btn" href="/">Back to the site</a>
+</div>
+</body>
+</html>
