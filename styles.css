@@ -46,7 +46,7 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:104px}
 body{
   font-family:var(--font);
   background:var(--paper);
@@ -115,33 +115,78 @@ h3{font-weight:700;font-size:20px;letter-spacing:-.012em;line-height:1.3}
 .btn.ghost:hover{background:var(--surface);border-color:var(--ink-3);color:var(--ink)}
 
 /* ---------------------------------------------------------------
-   Header
+   Header — a floating "island" rather than a full-width bar.
+   The <header> itself is transparent and click-through; only the
+   island catches the pointer, so content scrolls cleanly beneath.
    --------------------------------------------------------------- */
 header{
   position:sticky;top:0;z-index:50;
-  background:rgba(251,251,253,.86);
-  backdrop-filter:saturate(180%) blur(12px);
-  border-bottom:1px solid var(--line);
+  padding:var(--s4) 0;
+  pointer-events:none;
 }
-.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:var(--s5)}
+/* a soft scrim so content doesn't collide with the island edges on scroll */
+header::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,var(--paper) 35%,rgba(251,251,253,0));
+  opacity:0;transition:opacity .25s ease;
+}
+header.is-scrolled::before{opacity:1}
+
+.header-inner{
+  position:relative;z-index:1;
+  max-width:1140px;margin:0 auto;padding:0 var(--s5);
+}
+.nav{
+  pointer-events:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:var(--s5);height:64px;
+  padding:0 8px 0 24px;
+  border-radius:var(--r-pill);
+  border:1px solid rgba(210,217,229,.75);
+  background:
+    linear-gradient(135deg,
+      rgba(255,255,255,.94) 0%,
+      rgba(248,250,253,.88) 45%,
+      rgba(238,242,254,.92) 100%);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  backdrop-filter:saturate(180%) blur(14px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    0 1px 2px rgba(11,17,32,.04),
+    0 12px 28px -14px rgba(11,17,32,.22);
+  transition:height .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+header.is-scrolled .nav{
+  height:58px;
+  border-color:rgba(198,207,222,.9);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    0 1px 2px rgba(11,17,32,.05),
+    0 18px 36px -16px rgba(11,17,32,.3);
+}
+
 .logo{
   font-size:21px;font-weight:800;text-decoration:none;
   letter-spacing:-.028em;white-space:nowrap;
 }
 .logo span{color:var(--accent)}
-.nav-links{display:flex;gap:var(--s6);align-items:center;list-style:none}
+
+.nav-links{display:flex;gap:var(--s5);align-items:center;list-style:none}
 .nav-links a{
   text-decoration:none;font-size:15px;font-weight:500;
   color:var(--ink-2);transition:color .15s ease;
 }
 .nav-links a:hover{color:var(--ink)}
-.nav-links .btn{color:#fff}
+.nav-links .btn{color:#fff;padding:10px 20px;font-size:15px}
 .lang-switch{
   font-weight:700;font-size:12.5px;letter-spacing:.08em;
-  border:1px solid var(--line-strong);border-radius:var(--r-pill);
-  padding:6px 12px;color:var(--ink-2)!important;
+  border:1px solid rgba(210,217,229,.9);border-radius:var(--r-pill);
+  padding:5px 11px;color:var(--ink-2)!important;
+  background:rgba(255,255,255,.6);
+  transition:border-color .15s ease,background .15s ease;
 }
-.lang-switch:hover{border-color:var(--ink-3);background:var(--surface)}
+.lang-switch:hover{border-color:var(--ink-3);background:#fff}
+
 .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:var(--s2);color:var(--ink)}
 .menu-toggle svg{display:block}
 .menu-toggle svg path{stroke:currentColor}
@@ -158,7 +203,7 @@ section{padding:var(--s9) 0}
 /* ---------------------------------------------------------------
    Hero
    --------------------------------------------------------------- */
-.hero{padding:var(--s10) 0 var(--s9);overflow:hidden}
+.hero{padding:var(--s9) 0 var(--s9);overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:var(--s8);align-items:center}
 .hero p{font-size:19px;color:var(--ink-2);max-width:47ch;margin-bottom:var(--s6)}
 .hero-actions{display:flex;gap:var(--s3);flex-wrap:wrap}
@@ -467,17 +512,21 @@ footer{background:var(--ink-surface);color:var(--on-ink);padding:var(--s7) 0}
   .job-row .btn{justify-self:start}
 }
 @media (max-width:720px){
+  .nav{position:relative;height:58px;padding:0 10px 0 20px}
+  header.is-scrolled .nav{height:54px}
   .nav-links{
-    display:none;position:absolute;top:72px;left:0;right:0;
+    display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;
     flex-direction:column;align-items:stretch;gap:0;
     background:var(--surface);
-    border-bottom:1px solid var(--line);
+    border:1px solid var(--line);
+    border-radius:var(--r-lg);
     padding:var(--s2) var(--s5) var(--s5);
-    box-shadow:0 18px 30px -20px rgba(11,17,32,.35);
+    box-shadow:0 20px 40px -18px rgba(11,17,32,.4);
   }
   .nav-links.open{display:flex}
   .nav-links li{border-bottom:1px solid var(--line)}
-  .nav-links li:last-child{border-bottom:none;padding-top:var(--s4)}
+  .nav-links li:nth-last-child(2){border-bottom:none;padding-top:var(--s3)}
+  .nav-links li:last-child{border-bottom:none;padding-top:var(--s2)}
   .nav-links a{display:block;padding:var(--s4) 0;font-size:16px}
   .nav-links .btn,.nav-links .lang-switch{display:inline-flex;padding:11px 22px}
   .menu-toggle{display:block}

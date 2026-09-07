@@ -87,6 +87,23 @@
     });
   }
 
+  /* The floating header tightens once the page has moved off the top. */
+  var headerEl = document.getElementById("siteHeader");
+  if (headerEl) {
+    var ticking = false;
+    var syncHeader = function () {
+      headerEl.classList.toggle("is-scrolled", window.scrollY > 8);
+      ticking = false;
+    };
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(syncHeader);
+      }
+    }, { passive: true });
+    syncHeader();
+  }
+
   var nav = document.getElementById("navLinks");
   var toggle = document.querySelector(".menu-toggle");
   if (toggle && nav) {
