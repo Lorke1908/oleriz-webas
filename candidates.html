@@ -2,6 +2,14 @@
 <html lang="lt">
 <head>
 <meta charset="UTF-8">
+<script>
+  /* A reload otherwise returns you to wherever you were, and because
+     scroll-behavior is smooth the page appears to scroll itself. Only skip
+     restoration when no anchor was requested. */
+  if ("scrollRestoration" in history && !location.hash) {
+    history.scrollRestoration = "manual";
+  }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kandidatams — Oleriz</title>
 <meta name="description" content="Kaip vyksta atranka, kai kandidatuojate per Oleriz: kas vyksta kiekviename žingsnyje, ką įsipareigojame ir kiek tai jums kainuoja (nieko).">
@@ -12,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=07b882ca00">
+<link rel="stylesheet" href="styles.css?v=dc44840940">
 </head>
 <body>
 

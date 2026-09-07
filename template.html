@@ -11,6 +11,9 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
+{{#hero.status}}
+      <span class="hero-status">{{.}}</span>
+{{/hero.status}}
       <h1>{{hero.heading}} <em>{{hero.heading_accent}}</em></h1>
       <p>{{hero.intro}}</p>
       <div class="hero-actions">

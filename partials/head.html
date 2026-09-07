@@ -1,4 +1,12 @@
 <meta charset="UTF-8">
+<script>
+  /* A reload otherwise returns you to wherever you were, and because
+     scroll-behavior is smooth the page appears to scroll itself. Only skip
+     restoration when no anchor was requested. */
+  if ("scrollRestoration" in history && !location.hash) {
+    history.scrollRestoration = "manual";
+  }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{page.title}}</title>
 <meta name="description" content="{{page.description}}">

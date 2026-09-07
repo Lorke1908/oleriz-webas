@@ -256,6 +256,11 @@ content:
     label: Top of the homepage
     type: object
     fields:
+    - name: status
+      label: Availability pill
+      type: text
+      description: The small pill above the headline, e.g. "Currently taking on new clients". Leave it
+        empty to hide the pill entirely.
     - name: heading
       label: Headline
       type: text
@@ -840,6 +845,11 @@ content:
     label: Top of the homepage
     type: object
     fields:
+    - name: status
+      label: Availability pill
+      type: text
+      description: The small pill above the headline, e.g. "Currently taking on new clients". Leave it
+        empty to hide the pill entirely.
     - name: heading
       label: Headline
       type: text

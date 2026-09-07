@@ -248,6 +248,33 @@ section{padding:var(--s9) 0}
    --------------------------------------------------------------- */
 .hero{padding:var(--s9) 0 var(--s9);overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:var(--s8);align-items:center}
+/* Availability pill above the headline. Empty in the CMS hides it. */
+.hero-status{
+  display:inline-flex;align-items:center;gap:9px;
+  margin-bottom:var(--s5);
+  padding:7px 16px 7px 12px;
+  border:1px solid var(--line);
+  border-radius:var(--r-pill);
+  background:rgba(255,255,255,.8);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  box-shadow:var(--shadow-sm);
+  font-size:13.5px;font-weight:600;color:var(--ink-2);
+}
+.hero-status::before{
+  content:"";flex-shrink:0;
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 3px rgba(42,92,232,.18);
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero-status::before{animation:statusPulse 2.6s ease-in-out infinite}
+  @keyframes statusPulse{
+    0%,100%{box-shadow:0 0 0 3px rgba(42,92,232,.18)}
+    50%{box-shadow:0 0 0 7px rgba(42,92,232,.04)}
+  }
+}
+
 .hero p{font-size:19px;font-weight:450;color:var(--ink-2);max-width:47ch;margin-bottom:var(--s6)}
 .hero-actions{display:flex;gap:var(--s3);flex-wrap:wrap}
 
@@ -352,6 +379,8 @@ section{padding:var(--s9) 0}
 .jc-apply:hover{background:var(--accent);border-color:var(--accent);color:#fff;gap:9px}
 
 @media (prefers-reduced-motion:no-preference){
+  .job-card.featured{animation:cardFloat 7s ease-in-out 1.2s infinite}
+  @keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
   .hero-grid > *{opacity:0;transform:translateY(18px);animation:rise .75s cubic-bezier(.2,.7,.3,1) forwards}
   .hero-grid > :nth-child(2){animation-delay:.12s}
   @keyframes rise{to{opacity:1;transform:none}}
@@ -697,8 +726,15 @@ footer{background:var(--ink-surface);color:var(--on-ink);padding:var(--s7) 0}
 @media (max-width:720px){
   .steps{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
+  /* the two hero buttons share a row evenly rather than sizing to their text */
+  .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+  .hero-actions .btn{width:100%}
   .hero-meta{grid-template-columns:1fr;gap:var(--s2)}
   .hero-meta > div{padding:var(--s5) var(--s4)}
   .journey-step{padding-left:48px;padding-bottom:var(--s6)}
   .foot{flex-direction:column;align-items:flex-start;gap:var(--s4)}
+}
+
+@media (max-width:460px){
+  .hero-actions{grid-template-columns:1fr}
 }
