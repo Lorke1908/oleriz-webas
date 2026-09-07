@@ -192,6 +192,14 @@ content:
       label: Roles page search description
       type: text
       required: true
+    - name: candidates_title
+      label: Candidates page title
+      type: string
+      required: true
+    - name: candidates_description
+      label: Candidates page search description
+      type: text
+      required: true
     - name: thanks_title
       label: Thank-you page title
       type: string
@@ -208,12 +216,13 @@ content:
       label: Name — first part
       type: string
       required: true
-      description: Shown in black in the logo.
+      description: Shown in black in the logo. The lowercase is intentional.
     - name: name_end
       label: Name — second part
       type: string
       required: true
-      description: Shown in blue straight after. "North" + "bound" reads as "Northbound".
+      description: Shown in blue straight after the first part. Currently a full stop, which is why the
+        logo reads "oleriz" with a blue dot.
   - name: nav
     label: Menu
     type: object
@@ -224,6 +233,10 @@ content:
       required: true
     - name: process
       label: 'Menu: how we work'
+      type: string
+      required: true
+    - name: candidates
+      label: 'Menu: for candidates'
       type: string
       required: true
     - name: roles
@@ -401,6 +414,88 @@ content:
         label: Step description
         type: text
         required: true
+  - name: candidates_page
+    label: 'Page: for candidates'
+    type: object
+    description: The separate page explaining how hiring works from a candidate's side.
+    fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+    - name: heading
+      label: Page heading
+      type: text
+      required: true
+    - name: intro
+      label: Opening paragraph
+      type: text
+      required: true
+    - name: steps_heading
+      label: Journey section heading
+      type: string
+      required: true
+    - name: steps_intro
+      label: Journey section intro
+      type: text
+      required: true
+    - name: steps
+      label: The steps
+      type: object
+      list: true
+      description: Shown as a numbered list joined by a line. Add or remove freely — the numbers renumber
+        themselves.
+      fields:
+      - name: heading
+        label: Step name
+        type: string
+        required: true
+      - name: body
+        label: What happens
+        type: text
+        required: true
+    - name: promises_heading
+      label: Commitments heading
+      type: string
+      required: true
+    - name: promises
+      label: Commitments
+      type: string
+      list: true
+      description: The ticked list of what you promise candidates.
+    - name: faq_heading
+      label: Questions heading
+      type: string
+      required: true
+    - name: faq
+      label: Questions
+      type: object
+      list: true
+      fields:
+      - name: question
+        label: Question
+        type: string
+        required: true
+      - name: answer
+        label: Answer
+        type: text
+        required: true
+    - name: cta_heading
+      label: Closing panel heading
+      type: string
+      required: true
+    - name: cta_intro
+      label: Closing panel text
+      type: text
+      required: true
+    - name: cta_roles
+      label: Closing panel — roles button
+      type: string
+      required: true
+    - name: cta_contact
+      label: Closing panel — contact button
+      type: string
+      required: true
   - name: roles
     label: 'Section: open roles'
     type: object
@@ -626,6 +721,10 @@ content:
         required: true
       - name: roles
         label: 'Link: open roles'
+        type: string
+        required: true
+      - name: candidates
+        label: 'Link: for candidates'
         type: string
         required: true
       - name: contact
@@ -677,6 +776,14 @@ content:
       label: Roles page search description
       type: text
       required: true
+    - name: candidates_title
+      label: Candidates page title
+      type: string
+      required: true
+    - name: candidates_description
+      label: Candidates page search description
+      type: text
+      required: true
     - name: thanks_title
       label: Thank-you page title
       type: string
@@ -693,12 +800,13 @@ content:
       label: Name — first part
       type: string
       required: true
-      description: Shown in black in the logo.
+      description: Shown in black in the logo. The lowercase is intentional.
     - name: name_end
       label: Name — second part
       type: string
       required: true
-      description: Shown in blue straight after. "North" + "bound" reads as "Northbound".
+      description: Shown in blue straight after the first part. Currently a full stop, which is why the
+        logo reads "oleriz" with a blue dot.
   - name: nav
     label: Menu
     type: object
@@ -709,6 +817,10 @@ content:
       required: true
     - name: process
       label: 'Menu: how we work'
+      type: string
+      required: true
+    - name: candidates
+      label: 'Menu: for candidates'
       type: string
       required: true
     - name: roles
@@ -886,6 +998,88 @@ content:
         label: Step description
         type: text
         required: true
+  - name: candidates_page
+    label: 'Page: for candidates'
+    type: object
+    description: The separate page explaining how hiring works from a candidate's side.
+    fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+      required: true
+    - name: heading
+      label: Page heading
+      type: text
+      required: true
+    - name: intro
+      label: Opening paragraph
+      type: text
+      required: true
+    - name: steps_heading
+      label: Journey section heading
+      type: string
+      required: true
+    - name: steps_intro
+      label: Journey section intro
+      type: text
+      required: true
+    - name: steps
+      label: The steps
+      type: object
+      list: true
+      description: Shown as a numbered list joined by a line. Add or remove freely — the numbers renumber
+        themselves.
+      fields:
+      - name: heading
+        label: Step name
+        type: string
+        required: true
+      - name: body
+        label: What happens
+        type: text
+        required: true
+    - name: promises_heading
+      label: Commitments heading
+      type: string
+      required: true
+    - name: promises
+      label: Commitments
+      type: string
+      list: true
+      description: The ticked list of what you promise candidates.
+    - name: faq_heading
+      label: Questions heading
+      type: string
+      required: true
+    - name: faq
+      label: Questions
+      type: object
+      list: true
+      fields:
+      - name: question
+        label: Question
+        type: string
+        required: true
+      - name: answer
+        label: Answer
+        type: text
+        required: true
+    - name: cta_heading
+      label: Closing panel heading
+      type: string
+      required: true
+    - name: cta_intro
+      label: Closing panel text
+      type: text
+      required: true
+    - name: cta_roles
+      label: Closing panel — roles button
+      type: string
+      required: true
+    - name: cta_contact
+      label: Closing panel — contact button
+      type: string
+      required: true
   - name: roles
     label: 'Section: open roles'
     type: object
@@ -1111,6 +1305,10 @@ content:
         required: true
       - name: roles
         label: 'Link: open roles'
+        type: string
+        required: true
+      - name: candidates
+        label: 'Link: for candidates'
         type: string
         required: true
       - name: contact

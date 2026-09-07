@@ -1,4 +1,4 @@
-# Northbound — recruitment agency site
+# Oleriz — recruitment agency site
 
 Bilingual static site. Lithuanian is the default and lives at the root; English
 lives under `/en/`.
@@ -7,6 +7,7 @@ lives under `/en/`.
 |---|---|---|
 | Homepage | `/` | `/en/` |
 | All open roles | `/roles.html` | `/en/roles.html` |
+| For candidates | `/candidates.html` | `/en/candidates.html` |
 | After the contact form | `/thanks.html` | `/en/thanks.html` |
 
 Live at **https://lorke1908.github.io/oleriz-webas/**
@@ -38,6 +39,7 @@ translated per language, so the filter buttons read correctly on each side.
 | `site.json` | Settings shared by both languages |
 | `template.html` | Homepage layout |
 | `template-roles.html` | All-roles page layout |
+| `template-candidates.html` | For-candidates page layout |
 | `template-thanks.html` | Thank-you page layout |
 | `partials/` | Shared `<head>`, header and footer |
 | `styles.css` | All styling, for every page |
@@ -46,13 +48,13 @@ translated per language, so the filter buttons read correctly on each side.
 | `.pages.yml` | Defines the editing screens |
 
 **The HTML pages are generated — do not edit them.** `index.html`, `roles.html`,
-`thanks.html` and everything in `en/` are rebuilt on every deploy and are not
+`candidates.html`, `thanks.html` and everything in `en/` are rebuilt on every deploy and are not
 stored in the repo. Edit the templates and the JSON instead.
 
 ## Working locally
 
 ```
-py build.py            # regenerate all six pages
+py build.py            # regenerate all eight pages
 py -m http.server 8000 # then open http://localhost:8000
 ```
 

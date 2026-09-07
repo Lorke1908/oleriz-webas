@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="{{paths.lang}}">
+<head>
+{{> partials/head.html }}
+</head>
+<body>
+
+{{> partials/header.html }}
+
+<section class="page-head-section">
+  <div class="wrap">
+    <div class="page-head">
+      <span class="eyebrow">{{candidates_page.eyebrow}}</span>
+      <h1>{{candidates_page.heading}}</h1>
+      <p>{{candidates_page.intro}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="wash">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{{candidates_page.steps_heading}}</h2>
+      <p>{{candidates_page.steps_intro}}</p>
+    </div>
+    <ol class="journey">
+{{#candidates_page.steps}}
+      <li class="journey-step">
+        <h3>{{heading}}</h3>
+        <p>{{body}}</p>
+      </li>
+{{/candidates_page.steps}}
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap promise-grid">
+    <div class="section-head">
+      <h2>{{candidates_page.promises_heading}}</h2>
+    </div>
+    <div class="split-card promise-card">
+      <ul>
+{{#candidates_page.promises}}
+        <li>{{.}}</li>
+{{/candidates_page.promises}}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wash">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{{candidates_page.faq_heading}}</h2>
+    </div>
+    <div class="faq-list">
+{{#candidates_page.faq}}
+      <details>
+        <summary>{{question}}</summary>
+        <p>{{answer}}</p>
+      </details>
+{{/candidates_page.faq}}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>{{candidates_page.cta_heading}}</h2>
+      <p>{{candidates_page.cta_intro}}</p>
+      <div class="cta-actions">
+        <a class="btn" href="{{paths.roles}}">{{candidates_page.cta_roles}}</a>
+        <a class="btn ghost" href="{{paths.home_anchor}}#contact">{{candidates_page.cta_contact}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{> partials/footer.html }}
+
+<script src="{{paths.site_js}}"></script>
+</body>
+</html>

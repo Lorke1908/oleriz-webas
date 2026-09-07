@@ -1,19 +1,22 @@
 {
   "meta": {
-    "title": "Northbound — Recruitment that fits",
-    "description": "Northbound is a recruitment agency placing vetted professionals in roles they'll stay in. Browse open roles or hire with us.",
-    "roles_title": "Open roles — Northbound",
-    "roles_description": "Every role Northbound is currently recruiting for, with real salary ranges. Filter by category and apply directly.",
-    "thanks_title": "Message sent — Northbound",
+    "title": "Oleriz — Recruitment that fits",
+    "description": "Oleriz is a recruitment agency placing vetted professionals in roles they'll stay in. Browse open roles or hire with us.",
+    "roles_title": "Open roles — Oleriz",
+    "roles_description": "Every role Oleriz is currently recruiting for, with real salary ranges. Filter by category and apply directly.",
+    "candidates_title": "For candidates — Oleriz",
+    "candidates_description": "How hiring works when you apply through Oleriz: what happens at each step, what we commit to, and what it costs you (nothing).",
+    "thanks_title": "Message sent — Oleriz",
     "thanks_description": "Thanks for getting in touch."
   },
   "brand": {
-    "name_start": "North",
-    "name_end": "bound"
+    "name_start": "oleriz",
+    "name_end": "."
   },
   "nav": {
     "employers": "For employers",
     "process": "How we work",
+    "candidates": "For candidates",
     "roles": "Open roles",
     "cta": "Hire with us",
     "menu_label": "Open menu"
@@ -21,7 +24,7 @@
   "hero": {
     "heading": "The right person, in the right seat,",
     "heading_accent": "still there next year.",
-    "intro": "Northbound is a recruitment agency for companies tired of slow shortlists and bad fits. We meet every candidate before you do — so you only interview people worth your time.",
+    "intro": "Oleriz is a recruitment agency for companies tired of slow shortlists and bad fits. We meet every candidate before you do — so you only interview people worth your time.",
     "cta_primary": "Hire with us",
     "cta_secondary": "Browse open roles",
     "stats": [
@@ -53,7 +56,7 @@
     }
   },
   "promises": {
-    "eyebrow": "Why Northbound",
+    "eyebrow": "Why Oleriz",
     "heading": "One agency, two promises",
     "intro": "Good recruitment works in both directions. Companies get people who stay; candidates get roles they actually want.",
     "employers": {
@@ -102,6 +105,74 @@
       }
     ]
   },
+  "candidates_page": {
+    "eyebrow": "For candidates",
+    "heading": "How hiring works when you go through us",
+    "intro": "Most agencies leave you guessing. This is exactly what happens from the moment you apply to the day you start — and what we commit to at every step.",
+    "steps_heading": "From application to first day",
+    "steps_intro": "Six steps, and you always know which one you are on.",
+    "steps": [
+      {
+        "heading": "You apply",
+        "body": "Apply to a role from our list, or send an open application if nothing fits yet. A CV is enough to start — no cover letter, no forms to fill in."
+      },
+      {
+        "heading": "A real conversation",
+        "body": "A 30-minute call within three working days. We ask what you actually want next: the work, the salary, the commute, and the things you will not compromise on."
+      },
+      {
+        "heading": "We ask before we send",
+        "body": "If a role fits, we tell you who the employer is and why we think it works. Your CV goes nowhere until you say yes to that specific company."
+      },
+      {
+        "heading": "Interview, properly prepared",
+        "body": "You get the job description, who you will meet, how they interview and the salary range before you walk in. Nothing about the day should be a surprise."
+      },
+      {
+        "heading": "Feedback within 48 hours",
+        "body": "After every interview, whichever way it went. If it is a no, you get the real reason — not that they went with someone else."
+      },
+      {
+        "heading": "Offer, and your first 90 days",
+        "body": "We handle the negotiation, so you are never arguing about your own salary. Then we check in through your first three months."
+      }
+    ],
+    "promises_heading": "What we commit to",
+    "promises": [
+      "Real salary ranges on every role, before you apply",
+      "Honest feedback after every interview, within 48 hours",
+      "Your CV never shared without your explicit yes, company by company",
+      "Completely free — candidates never pay us anything",
+      "Confidential throughout, including from your current employer"
+    ],
+    "faq_heading": "Questions candidates ask",
+    "faq": [
+      {
+        "question": "Does this cost me anything?",
+        "answer": "No, and it never will. The hiring company pays our fee. It makes no difference to your salary — it is not taken out of what you are offered."
+      },
+      {
+        "question": "Will my current employer find out?",
+        "answer": "Not from us. We never send your CV anywhere without your explicit yes for that specific company, and you can name employers to exclude from any search on your behalf."
+      },
+      {
+        "question": "What if I am not right for the role I applied to?",
+        "answer": "We tell you honestly and we say why. If something better suited is coming, we keep you in mind — with your permission, and not by adding you to a mailing list."
+      },
+      {
+        "question": "How long does it usually take?",
+        "answer": "From first call to signed offer is typically three to six weeks, depending on how quickly the employer moves. We tell you their timeline at the start rather than leaving you waiting."
+      },
+      {
+        "question": "What should my CV look like?",
+        "answer": "Plain and up to date is enough. If something needs strengthening before we send it, we tell you what and why — we do not quietly rewrite it behind your back."
+      }
+    ],
+    "cta_heading": "Ready when you are",
+    "cta_intro": "Browse what is open now, or send an open application and we will get in touch when the right role comes in.",
+    "cta_roles": "See open roles",
+    "cta_contact": "Send an open application"
+  },
   "roles": {
     "eyebrow": "Hiring now",
     "heading": "Open roles",
@@ -124,7 +195,7 @@
     "heading": "What clients say once the seat is filled",
     "items": [
       {
-        "quote": "“We'd been searching for a head of logistics for five months. Northbound had a signed offer in three weeks — and she's still with us two years later.”",
+        "quote": "“We'd been searching for a head of logistics for five months. Oleriz had a signed offer in three weeks — and she's still with us two years later.”",
         "author": "Operations Director",
         "company": "Logistics company, 250 employees"
       },
@@ -183,10 +254,11 @@
     }
   },
   "footer": {
-    "copyright": "© 2026 Northbound Recruitment. All rights reserved.",
+    "copyright": "© 2026 Oleriz. All rights reserved.",
     "links": {
       "employers": "For employers",
       "roles": "Open roles",
+      "candidates": "For candidates",
       "contact": "Contact"
     }
   },

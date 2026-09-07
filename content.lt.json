@@ -1,19 +1,22 @@
 {
   "meta": {
-    "title": "Northbound — personalo atranka, kuri tinka",
-    "description": "Northbound — personalo atrankos agentūra, įdarbinanti patikrintus specialistus pozicijose, kuriose jie lieka. Peržiūrėkite skelbimus arba ieškokite darbuotojo su mumis.",
-    "roles_title": "Darbo skelbimai — Northbound",
+    "title": "Oleriz — personalo atranka, kuri tinka",
+    "description": "Oleriz — personalo atrankos agentūra, įdarbinanti patikrintus specialistus pozicijose, kuriose jie lieka. Peržiūrėkite skelbimus arba ieškokite darbuotojo su mumis.",
+    "roles_title": "Darbo skelbimai — Oleriz",
     "roles_description": "Visos pozicijos, kurioms šiuo metu ieškome žmonių, su tikrais atlyginimo rėžiais. Filtruokite pagal sritį ir kandidatuokite tiesiogiai.",
-    "thanks_title": "Žinutė išsiųsta — Northbound",
+    "candidates_title": "Kandidatams — Oleriz",
+    "candidates_description": "Kaip vyksta atranka, kai kandidatuojate per Oleriz: kas vyksta kiekviename žingsnyje, ką įsipareigojame ir kiek tai jums kainuoja (nieko).",
+    "thanks_title": "Žinutė išsiųsta — Oleriz",
     "thanks_description": "Ačiū, kad parašėte."
   },
   "brand": {
-    "name_start": "North",
-    "name_end": "bound"
+    "name_start": "oleriz",
+    "name_end": "."
   },
   "nav": {
     "employers": "Darbdaviams",
     "process": "Kaip dirbame",
+    "candidates": "Kandidatams",
     "roles": "Darbo skelbimai",
     "cta": "Ieškoti darbuotojo",
     "menu_label": "Atidaryti meniu"
@@ -21,7 +24,7 @@
   "hero": {
     "heading": "Tinkamas žmogus tinkamoje vietoje,",
     "heading_accent": "ir kitąmet vis dar su jumis.",
-    "intro": "Northbound — personalo atrankos agentūra įmonėms, pavargusioms nuo lėtų atrankų ir netinkamų kandidatų. Su kiekvienu kandidatu susitinkame anksčiau nei jūs, todėl kalbatės tik su tais, kurie verti jūsų laiko.",
+    "intro": "Oleriz — personalo atrankos agentūra įmonėms, pavargusioms nuo lėtų atrankų ir netinkamų kandidatų. Su kiekvienu kandidatu susitinkame anksčiau nei jūs, todėl kalbatės tik su tais, kurie verti jūsų laiko.",
     "cta_primary": "Ieškoti darbuotojo",
     "cta_secondary": "Peržiūrėti skelbimus",
     "stats": [
@@ -53,7 +56,7 @@
     }
   },
   "promises": {
-    "eyebrow": "Kodėl Northbound",
+    "eyebrow": "Kodėl Oleriz",
     "heading": "Viena agentūra, du pažadai",
     "intro": "Gera atranka veikia į abi puses. Įmonės gauna žmones, kurie lieka; kandidatai — darbą, kurio iš tikrųjų nori.",
     "employers": {
@@ -102,6 +105,74 @@
       }
     ]
   },
+  "candidates_page": {
+    "eyebrow": "Kandidatams",
+    "heading": "Kaip vyksta atranka, kai einate per mus",
+    "intro": "Dauguma agentūrų palieka jus spėlioti. Štai kas vyksta nuo paraiškos iki pirmos darbo dienos — ir ką kiekviename žingsnyje įsipareigojame.",
+    "steps_heading": "Nuo paraiškos iki pirmos darbo dienos",
+    "steps_intro": "Šeši žingsniai, ir visada žinote, kuriame esate.",
+    "steps": [
+      {
+        "heading": "Kandidatuojate",
+        "body": "Kandidatuokite į skelbimą iš mūsų sąrašo arba atsiųskite atvirą paraišką, jei kol kas niekas netinka. Pradžiai užtenka CV — jokių motyvacinių laiškų ar anketų."
+      },
+      {
+        "heading": "Tikras pokalbis",
+        "body": "30 minučių pokalbis per tris darbo dienas. Klausiame, ko iš tikrųjų norite toliau: koks darbas, koks atlyginimas, kiek kelio iki jo ir dėl ko tikrai nesiderėsite."
+      },
+      {
+        "heading": "Klausiame prieš siųsdami",
+        "body": "Jei pozicija tinka, pasakome, kas yra darbdavys ir kodėl, mūsų manymu, tai jums tiktų. Jūsų CV niekur nekeliauja, kol nepasakote „taip“ būtent tai įmonei."
+      },
+      {
+        "heading": "Pokalbis su pasiruošimu",
+        "body": "Prieš susitikimą gaunate pareigybės aprašymą, kas dalyvaus pokalbyje, kaip jis vyks ir koks atlyginimo rėžis. Vietoje neturi laukti jokių netikėtumų."
+      },
+      {
+        "heading": "Atsakymas per 48 valandas",
+        "body": "Po kiekvieno pokalbio, nesvarbu, koks sprendimas. Jei atsakymas neigiamas, sužinote tikrą priežastį, o ne kad „pasirinko kitą“."
+      },
+      {
+        "heading": "Pasiūlymas ir pirmosios 90 dienų",
+        "body": "Deramės mes, todėl jums nereikia ginčytis dėl savo atlyginimo. Vėliau palaikome ryšį pirmuosius tris mėnesius."
+      }
+    ],
+    "promises_heading": "Ką įsipareigojame",
+    "promises": [
+      "Tikri atlyginimo rėžiai kiekviename skelbime, dar prieš kandidatuojant",
+      "Sąžiningas grįžtamasis ryšys po kiekvieno pokalbio, per 48 valandas",
+      "Jūsų CV niekada nesiunčiamas be aiškaus sutikimo — atskirai kiekvienai įmonei",
+      "Visiškai nemokama — kandidatai mums nemoka nieko",
+      "Konfidencialu nuo pradžios iki pabaigos, taip pat ir nuo dabartinio darbdavio"
+    ],
+    "faq_heading": "Ką dažniausiai klausia kandidatai",
+    "faq": [
+      {
+        "question": "Ar man tai kainuoja?",
+        "answer": "Ne, ir niekada nekainuos. Atlygį moka įdarbinanti įmonė. Jūsų atlyginimui tai neturi jokios įtakos — jis nėra išskaičiuojamas iš to, ką jums pasiūlo."
+      },
+      {
+        "question": "Ar sužinos mano dabartinis darbdavys?",
+        "answer": "Iš mūsų — ne. Niekada nesiunčiame jūsų CV be aiškaus sutikimo būtent tai įmonei, o jūs galite įvardyti darbdavius, kurių paieškoje reikia vengti."
+      },
+      {
+        "question": "O jei netinku pozicijai, į kurią kandidatavau?",
+        "answer": "Pasakome sąžiningai ir paaiškiname kodėl. Jei netrukus atsiras tinkamesnė pozicija, jus prisiminsime — su jūsų leidimu, o ne įtraukdami į naujienlaiškį."
+      },
+      {
+        "question": "Kiek laiko tai paprastai trunka?",
+        "answer": "Nuo pirmo pokalbio iki pasirašyto pasiūlymo dažniausiai praeina trys–šešios savaitės, priklausomai nuo to, kaip greitai juda darbdavys. Jų terminus pasakome iš karto, o ne paliekame jūsų laukti."
+      },
+      {
+        "question": "Kaip turėtų atrodyti mano CV?",
+        "answer": "Užtenka paprasto ir atnaujinto. Jei prieš siunčiant ką nors verta sustiprinti, pasakome ką ir kodėl — patys tyliai jo neperrašome."
+      }
+    ],
+    "cta_heading": "Kai būsite pasiruošę",
+    "cta_intro": "Peržiūrėkite, kas atvira dabar, arba atsiųskite atvirą paraišką — susisieksime, kai atsiras tinkama pozicija.",
+    "cta_roles": "Peržiūrėti skelbimus",
+    "cta_contact": "Atsiųsti atvirą paraišką"
+  },
   "roles": {
     "eyebrow": "Šiuo metu ieškome",
     "heading": "Darbo skelbimai",
@@ -124,7 +195,7 @@
     "heading": "Ką klientai sako, kai vieta užpildyta",
     "items": [
       {
-        "quote": "„Logistikos vadovo ieškojome penkis mėnesius. Northbound per tris savaites turėjo pasirašytą pasiūlymą — ir ji vis dar dirba su mumis, jau dvejus metus.“",
+        "quote": "„Logistikos vadovo ieškojome penkis mėnesius. Oleriz per tris savaites turėjo pasirašytą pasiūlymą — ir ji vis dar dirba su mumis, jau dvejus metus.“",
         "author": "Operacijų vadovė",
         "company": "Logistikos įmonė, 250 darbuotojų"
       },
@@ -183,10 +254,11 @@
     }
   },
   "footer": {
-    "copyright": "© 2026 Northbound Recruitment. Visos teisės saugomos.",
+    "copyright": "© 2026 Oleriz. Visos teisės saugomos.",
     "links": {
       "employers": "Darbdaviams",
       "roles": "Darbo skelbimai",
+      "candidates": "Kandidatams",
       "contact": "Kontaktai"
     }
   },

@@ -15,6 +15,7 @@ Writes:
     index.html  roles.html  thanks.html          (Lithuanian, the default)
     en/index.html  en/roles.html  en/thanks.html (English)
 """
+import hashlib
 import html
 import io
 import json
@@ -33,6 +34,8 @@ PAGES = [
      "title": "meta.title", "description": "meta.description"},
     {"template": "template-roles.html", "out": "roles.html",
      "title": "meta.roles_title", "description": "meta.roles_description"},
+    {"template": "template-candidates.html", "out": "candidates.html",
+     "title": "meta.candidates_title", "description": "meta.candidates_description"},
     {"template": "template-thanks.html", "out": "thanks.html",
      "title": "meta.thanks_title", "description": "meta.thanks_description",
      "noindex": True},
@@ -124,6 +127,13 @@ def load(path):
     return json.load(io.open(path, encoding='utf-8'))
 
 
+def asset_version(path):
+    """Short content hash, appended to asset links so a browser can never
+    serve a stale stylesheet or script after a deploy."""
+    h = hashlib.sha256(io.open(path, 'rb').read()).hexdigest()
+    return h[:10]
+
+
 def paths_for(lang, page, site_url):
     """Relative links out of this page, plus absolute URLs for SEO tags."""
     root = "" if not lang["dir"] else "../"
@@ -140,9 +150,11 @@ def paths_for(lang, page, site_url):
         # bare "#contact" on the homepage; "index.html#contact" from other pages
         "home_anchor": "" if page["out"] == "index.html" else "index.html",
         "roles": "roles.html",
+        "candidates": "candidates.html",
         "thanks": "thanks.html",
         "jobs": root + lang["jobs"],
-        "site_js": root + "site.js",
+        "styles": root + "styles.css?v=" + asset_version("styles.css"),
+        "site_js": root + "site.js?v=" + asset_version("site.js"),
         "other_home": other_root + "index.html",
         "other_label": other["label"],
         "other_code": other["code"],
