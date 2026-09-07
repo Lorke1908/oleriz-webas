@@ -138,6 +138,34 @@
     });
   }
 
+  /* Sections rise into view as you scroll. The class is added here rather
+     than in the markup, so without JS nothing is ever left invisible. */
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var revealTargets = document.querySelectorAll(
+      ".section-head, .split-card, .step, .t-card, .journey-step, " +
+      ".faq-list, .contact-info, .contact-grid form, .form-fallback"
+    );
+    if (revealTargets.length) {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          revealObserver.unobserve(entry.target);
+          entry.target.classList.add("is-visible");
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+      Array.prototype.forEach.call(revealTargets, function (el) {
+        el.classList.add("reveal");
+        // stagger siblings so a row of cards arrives in sequence
+        var siblings = Array.prototype.filter.call(
+          el.parentNode.children, function (c) { return c.classList.contains("reveal"); });
+        var i = siblings.indexOf(el);
+        if (i > 0) el.style.transitionDelay = Math.min(i * 80, 240) + "ms";
+        revealObserver.observe(el);
+      });
+    }
+  }
+
   /* The floating header tightens once the page has moved off the top. */
   var headerEl = document.getElementById("siteHeader");
   if (headerEl) {
